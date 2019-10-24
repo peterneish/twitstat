@@ -3,6 +3,6 @@ title: "About"
 ---
 
 This website displays the results of analysing Twitter activity for various
-hashtags. It was created using the _[clamour][]_ package.
+hashtags. It was created using the _[clamour][]_ package. Many thanks to [Luke Zappia](https://github.com/lazappi)!
 
 [clamour]: https://lazappi.github.io/clamour "clamour package website"
