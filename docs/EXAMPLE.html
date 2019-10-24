@@ -1,0 +1,2106 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>EXAMPLE</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 64px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h2 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h3 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h4 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h5 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h6 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Twitter stats</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="about.html">About</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">EXAMPLE</h1>
+<h3 class="subtitle">An example analysis</h3>
+<h4 class="date">2019-10-24 12:18:54</h4>
+
+</div>
+
+
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Parameter</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">hashtag</td>
+<td align="left">#rstats</td>
+</tr>
+<tr class="even">
+<td align="left">start_day</td>
+<td align="left">2019-07-04</td>
+</tr>
+<tr class="odd">
+<td align="left">end_day</td>
+<td align="left">2019-07-06</td>
+</tr>
+<tr class="even">
+<td align="left">timezone</td>
+<td align="left">Australia/Melbourne</td>
+</tr>
+<tr class="odd">
+<td align="left">theme</td>
+<td align="left">theme_light</td>
+</tr>
+<tr class="even">
+<td align="left">accent</td>
+<td align="left">dodgerblue</td>
+</tr>
+<tr class="odd">
+<td align="left">accent2</td>
+<td align="left">#8EC7FF</td>
+</tr>
+<tr class="even">
+<td align="left">kcore</td>
+<td align="left">2</td>
+</tr>
+<tr class="odd">
+<td align="left">topics_k</td>
+<td align="left">6</td>
+</tr>
+<tr class="even">
+<td align="left">bigram_filter</td>
+<td align="left">3</td>
+</tr>
+<tr class="odd">
+<td align="left">fixed</td>
+<td align="left">TRUE</td>
+</tr>
+<tr class="even">
+<td align="left">seed</td>
+<td align="left">1</td>
+</tr>
+</tbody>
+</table>
+<div id="introduction" class="section level1">
+<h1><span class="header-section-number">1</span> Introduction</h1>
+<p>An analysis of tweets from the #rstats hashtag. A total of 500 tweets from 302 users were collected using the <code>rtweet</code> R package.</p>
+</div>
+<div id="timeline" class="section level1">
+<h1><span class="header-section-number">2</span> Timeline</h1>
+<div id="tweets-by-day" class="section level2">
+<h2><span class="header-section-number">2.1</span> Tweets by day</h2>
+<p><img src="figures/EXAMPLE/tweets-by-day-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="tweets-by-day-and-time" class="section level2">
+<h2><span class="header-section-number">2.2</span> Tweets by day and time</h2>
+<p>Filtered for dates 2019-07-04 - 2019-07-06 in the Australia/Melbourne timezone.</p>
+<p><img src="figures/EXAMPLE/tweets-by-day-hour-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="users" class="section level1">
+<h1><span class="header-section-number">3</span> Users</h1>
+<div id="top-tweeters" class="section level2 tabset tabset-pills">
+<h2><span class="header-section-number">3.1</span> Top tweeters</h2>
+<div id="overall" class="section level3 unnumbered">
+<h3>Overall</h3>
+<p><img src="figures/EXAMPLE/tweets-top-users-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="original" class="section level3 unnumbered">
+<h3>Original</h3>
+<p><img src="figures/EXAMPLE/tweets-top-users-orig-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="retweets" class="section level3 unnumbered">
+<h3>Retweets</h3>
+<p><img src="figures/EXAMPLE/tweets-top-users-retweet-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="retweet-proportion" class="section level2">
+<h2><span class="header-section-number">3.2</span> Retweet proportion</h2>
+<p><img src="figures/EXAMPLE/tweets-retweet-prop-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="top-tweeters-timeline" class="section level2">
+<h2><span class="header-section-number">3.3</span> Top tweeters timeline</h2>
+<p><img src="figures/EXAMPLE/tweets-top-users-time-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="top-tweeters-by-day" class="section level2 tabset tabset-pills">
+<h2><span class="header-section-number">3.4</span> Top tweeters by day</h2>
+<div id="overall-1" class="section level3 unnumbered tabset tabset-fade">
+<h3>Overall</h3>
+<div id="day-1" class="section level4 unnumbered">
+<h4>Day 1</h4>
+<p><img src="figures/EXAMPLE/tweets-top-users-day1-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="day-2" class="section level4 unnumbered">
+<h4>Day 2</h4>
+<p><img src="figures/EXAMPLE/tweets-top-users-day2-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="day-3" class="section level4 unnumbered">
+<h4>Day 3</h4>
+<p><img src="figures/EXAMPLE/tweets-top-users-day3-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="original-1" class="section level3 unnumbered tabset tabset-fade">
+<h3>Original</h3>
+<div id="day-1-1" class="section level4 unnumbered">
+<h4>Day 1</h4>
+<p><img src="figures/EXAMPLE/tweets-top-users-orig-day1-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="day-2-1" class="section level4 unnumbered">
+<h4>Day 2</h4>
+<p><img src="figures/EXAMPLE/tweets-top-users-orig-day2-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="day-3-1" class="section level4 unnumbered">
+<h4>Day 3</h4>
+<p><img src="figures/EXAMPLE/tweets-top-users-orig-day3-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="retweets-1" class="section level3 unnumbered tabset tabset-fade">
+<h3>Retweets</h3>
+<div id="day-1-2" class="section level4 unnumbered">
+<h4>Day 1</h4>
+<p><img src="figures/EXAMPLE/tweets-top-users-retweets-day1-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="day-2-2" class="section level4 unnumbered">
+<h4>Day 2</h4>
+<p><img src="figures/EXAMPLE/tweets-top-users-retweets-day2-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="day-3-2" class="section level4 unnumbered">
+<h4>Day 3</h4>
+<p><img src="figures/EXAMPLE/tweets-top-users-retweets-day3-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+</div>
+</div>
+<div id="sources" class="section level1">
+<h1><span class="header-section-number">4</span> Sources</h1>
+<p><img src="figures/EXAMPLE/tweets-top-sources-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="networks" class="section level1">
+<h1><span class="header-section-number">5</span> Networks</h1>
+<div id="replies" class="section level2">
+<h2><span class="header-section-number">5.1</span> Replies</h2>
+<p>The “replies network”, composed from users who reply directly to one another, coloured by PageRank.</p>
+<p><img src="figures/EXAMPLE/reply-network-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="mentions" class="section level2">
+<h2><span class="header-section-number">5.2</span> Mentions</h2>
+<p>The “mentions network”, where users mention other users in their tweets. Filtered for a k-core of 2. Node colour and size adjusted according to PageRank score.</p>
+<p><img src="figures/EXAMPLE/mentions-network-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="tweet-types" class="section level1">
+<h1><span class="header-section-number">6</span> Tweet types</h1>
+<div id="retweets-2" class="section level2 tabset tabset-pills">
+<h2><span class="header-section-number">6.1</span> Retweets</h2>
+<div id="proportion" class="section level3 unnumbered">
+<h3>Proportion</h3>
+<p><img src="figures/EXAMPLE/is-retweet-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="count" class="section level3 unnumbered">
+<h3>Count</h3>
+<p><img src="figures/EXAMPLE/retweet-count-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="top-10" class="section level3 unnumbered">
+<h3>Top 10</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+retweet_count
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+UseR2019_Conf
+</td>
+<td style="text-align:left;">
+Sad and angry to hear that, while France has the privilege to host one of the most important international conferences in data science, <span class="citation">@Place_Beauvau</span> has denied a visa to two active Nigerian members of the R community: <span class="citation">@Denironyx</span> and <span class="citation">@Godskid_CFC</span>. #rstats
+</td>
+<td style="text-align:right;">
+84
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+gp_pulipaka
+</td>
+<td style="text-align:left;">
+Free eBook: #MachineLearning at Enterprise Scale. #BigData #DataScience #Hadoop #ApacheSpark #Azure #AWS #GCP #AI #IoT #IIoT #Python #RStats #TensorFlow #Java #JavaScript #ReactJS #GoLang #CloudComputing #Serverless #DataScientist #Linux #Books <a href="https://t.co/ijO7Ggcpip" class="uri">https://t.co/ijO7Ggcpip</a> <a href="https://t.co/WQkbJMSfTZ" class="uri">https://t.co/WQkbJMSfTZ</a>
+</td>
+<td style="text-align:right;">
+31
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+gp_pulipaka
+</td>
+<td style="text-align:left;">
+Jupyter is the New Excel. #BigData #Analytics #DataScience #MachineLearning #AI #IoT #IIoT #Jupyter #PyTorch #Python #RStats #TensorFlow #Java #JavaScript #ReactJS #GoLang #CloudComputing #Serverless #Linux <a href="https://t.co/XzqXF4qLlm" class="uri">https://t.co/XzqXF4qLlm</a> <a href="https://t.co/jPXp5LviEX" class="uri">https://t.co/jPXp5LviEX</a>
+</td>
+<td style="text-align:right;">
+23
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Rbloggers
+</td>
+<td style="text-align:left;">
+DataScience Portfolio Ideas for Students &amp;amp; Beginners {<a href="https://t.co/04Le4wts2W" class="uri">https://t.co/04Le4wts2W</a>} #rstats #DataScience
+</td>
+<td style="text-align:right;">
+21
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+gp_pulipaka
+</td>
+<td style="text-align:left;">
+Real-time Recommendations by <span class="citation">@neo4j</span> Featuring <span class="citation">@gp_pulipaka</span> <span class="citation">@_nicolemargaret</span>. #BigData #Analytics #Ne04J #NoSQL #MachineLearning #DataScience #AI #IoT #IIoT #Python #RStats #JavaScript #ReactJS #GoLang #CloudComputing #Serverless #DataScientist #Linux <a href="https://t.co/Sch4MpWT5X" class="uri">https://t.co/Sch4MpWT5X</a> <a href="https://t.co/itAu3yi2eg" class="uri">https://t.co/itAu3yi2eg</a>
+</td>
+<td style="text-align:right;">
+17
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+gp_pulipaka
+</td>
+<td style="text-align:left;">
+VMware Introduces Education Services To Train Teams On VMware Cloud On #AWS. #BigData #Analytics #DataScience #AI #MachineLearning #AI #IoT #IIoT #PyTorch #Python #RStats #Java #JavaScript #ReactJS #GoLang #CloudComputing #Serverless #DataScientist #Linux <a href="https://t.co/HUm94Lo6YD" class="uri">https://t.co/HUm94Lo6YD</a> <a href="https://t.co/O4LjQfkkA5" class="uri">https://t.co/O4LjQfkkA5</a>
+</td>
+<td style="text-align:right;">
+16
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+gp_pulipaka
+</td>
+<td style="text-align:left;">
+60+ Real-World Projects Implemented for Commercial Clients: Find it in the Book <span class="citation">@MirrorReview1</span>. #BigData #Analytics #DataScience #AI #MachineLearning #IIoT #Python #RStats #JavaScript #ReactJS #GoLang #CloudComputing #Serverless #DataScientist #Linux <a href="https://t.co/68zv7AViPj" class="uri">https://t.co/68zv7AViPj</a> <a href="https://t.co/JY48kc28Qr" class="uri">https://t.co/JY48kc28Qr</a>
+</td>
+<td style="text-align:right;">
+16
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rvanmazijk
+</td>
+<td style="text-align:left;">
+First proper blogpost! My thoughts on running a workshop on data wrangling in R with the <code>tidyverse</code>, which I have just done! <a href="https://t.co/hTJUJzCBTy" class="uri">https://t.co/hTJUJzCBTy</a> #rstats #tidyverse #iamascientist
+</td>
+<td style="text-align:right;">
+15
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+nnstats
+</td>
+<td style="text-align:left;">
+#rstats function of the day is stringi::stri_trans_general() because I’m using a dataset where they really cared about getting all the accents right in Finnish names and joining it with another dataset where they did not care at all <a href="https://t.co/UR6lbz8Wjj" class="uri">https://t.co/UR6lbz8Wjj</a>
+</td>
+<td style="text-align:right;">
+14
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MassGrid
+</td>
+<td style="text-align:left;">
+hello，we are MassGrid #BigData #Analytics #DataScience #AI #MachineLearning #BlockChain #FinTech #Ethereum #IoT #IIoT #Python #RStats #TensorFlow #Java #JavaScript #ReactJS #GoLang #CloudComputing #Serverless #DataScientist #Linux #books #crypto #altcoin #mercatox <a href="https://t.co/l0pubUsIjB" class="uri">https://t.co/l0pubUsIjB</a>
+</td>
+<td style="text-align:right;">
+12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="most-retweeted" class="section level3 unnumbered">
+<h3>Most retweeted</h3>
+</div>
+</div>
+<div id="likes" class="section level2 tabset tabset-pills">
+<h2><span class="header-section-number">6.2</span> Likes</h2>
+<div id="proportion-1" class="section level3 unnumbered">
+<h3>Proportion</h3>
+<p><img src="figures/EXAMPLE/has-favorite-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="count-1" class="section level3 unnumbered">
+<h3>Count</h3>
+<p><img src="figures/EXAMPLE/favorite-count-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="top-10-1" class="section level3 unnumbered">
+<h3>Top 10</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+favorite_count
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+nnstats
+</td>
+<td style="text-align:left;">
+#rstats function of the day is stringi::stri_trans_general() because I’m using a dataset where they really cared about getting all the accents right in Finnish names and joining it with another dataset where they did not care at all <a href="https://t.co/UR6lbz8Wjj" class="uri">https://t.co/UR6lbz8Wjj</a>
+</td>
+<td style="text-align:right;">
+125
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+UseR2019_Conf
+</td>
+<td style="text-align:left;">
+Sad and angry to hear that, while France has the privilege to host one of the most important international conferences in data science, <span class="citation">@Place_Beauvau</span> has denied a visa to two active Nigerian members of the R community: <span class="citation">@Denironyx</span> and <span class="citation">@Godskid_CFC</span>. #rstats
+</td>
+<td style="text-align:right;">
+110
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Rbloggers
+</td>
+<td style="text-align:left;">
+DataScience Portfolio Ideas for Students &amp;amp; Beginners {<a href="https://t.co/04Le4wts2W" class="uri">https://t.co/04Le4wts2W</a>} #rstats #DataScience
+</td>
+<td style="text-align:right;">
+84
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+djnavarro
+</td>
+<td style="text-align:left;">
+good morning to the lovely #rstats people and to absolutely no-one else <a href="https://t.co/P3ZeZRK8Y9" class="uri">https://t.co/P3ZeZRK8Y9</a>
+</td>
+<td style="text-align:right;">
+72
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sophie_e_hill
+</td>
+<td style="text-align:left;">
+Me, about to run some regex that I carefully copy-pasted from stackoverflow and absolutely do not understand #Rstats <a href="https://t.co/KGdIwP7c6r" class="uri">https://t.co/KGdIwP7c6r</a>
+</td>
+<td style="text-align:right;">
+60
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rvanmazijk
+</td>
+<td style="text-align:left;">
+First proper blogpost! My thoughts on running a workshop on data wrangling in R with the <code>tidyverse</code>, which I have just done! <a href="https://t.co/hTJUJzCBTy" class="uri">https://t.co/hTJUJzCBTy</a> #rstats #tidyverse #iamascientist
+</td>
+<td style="text-align:right;">
+54
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IsabelleStevant
+</td>
+<td style="text-align:left;">
+And TADAAAA! This is a stage 11 Drosophila embryo in ggplot2 made with svg I drew with Inkscape, from which I exported the coordinates with <a href="https://t.co/FeB5coeM4w" class="uri">https://t.co/FeB5coeM4w</a> #rstats <a href="https://t.co/3rLgrDw03k" class="uri">https://t.co/3rLgrDw03k</a>
+</td>
+<td style="text-align:right;">
+51
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+r0mymendez
+</td>
+<td style="text-align:left;">
+#datosdemiercoles Esta semana arme el mapa🌎 con todos los capítulos de RLadies e indique los 20 capítulos con mas miembros. Buenos Aires es uno de ellos 😍 #rladies #visualizacion #r #tidyverse #rstats #rstatsES #r4ds_es #tidyverse El codigo 👉<a href="https://t.co/2iDNYeNufd" class="uri">https://t.co/2iDNYeNufd</a> <a href="https://t.co/ciVJxMTyBj" class="uri">https://t.co/ciVJxMTyBj</a>
+</td>
+<td style="text-align:right;">
+25
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+gp_pulipaka
+</td>
+<td style="text-align:left;">
+Free eBook: #MachineLearning at Enterprise Scale. #BigData #DataScience #Hadoop #ApacheSpark #Azure #AWS #GCP #AI #IoT #IIoT #Python #RStats #TensorFlow #Java #JavaScript #ReactJS #GoLang #CloudComputing #Serverless #DataScientist #Linux #Books <a href="https://t.co/ijO7Ggcpip" class="uri">https://t.co/ijO7Ggcpip</a> <a href="https://t.co/WQkbJMSfTZ" class="uri">https://t.co/WQkbJMSfTZ</a>
+</td>
+<td style="text-align:right;">
+20
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Joan_Gimenez
+</td>
+<td style="text-align:left;">
+Thanks to all the students of the 1st Stable Isotope Course Applied to Trophic Studies at <span class="citation">@ICMCSIC</span> <span class="citation">@BarcelonaOCEAN</span> <span class="citation">@icm_young</span> #stableisotopes #trophicecology #SIBER #tRophicposition #rstats <a href="https://t.co/XJUk2EgfJs" class="uri">https://t.co/XJUk2EgfJs</a>
+</td>
+<td style="text-align:right;">
+16
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="most-likes" class="section level3 unnumbered">
+<h3>Most likes</h3>
+<p><img src="figures/EXAMPLE/most-favorited-1.png" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="quotes" class="section level2 tabset tabset-pills">
+<h2><span class="header-section-number">6.3</span> Quotes</h2>
+<div id="proportion-2" class="section level3 unnumbered">
+<h3>Proportion</h3>
+<p><img src="figures/EXAMPLE/is-quote-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="count-2" class="section level3 unnumbered">
+<h3>Count</h3>
+<p><img src="figures/EXAMPLE/quotes-count-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="top-10-2" class="section level3 unnumbered">
+<h3>Top 10</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+quote_count
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+MabLabUF
+</td>
+<td style="text-align:left;">
+Very interesting thread, and I truly recommend R programmers to read the essay from <span class="citation">@matloff</span>. The importance of <span class="citation">@rstudio</span> in the #rstats ecosystem comes with great responsibility—one of them should be to teach solid foundations of base R, another to contribute to improve it. <a href="https://t.co/jniweVn0xF" class="uri">https://t.co/jniweVn0xF</a>
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+datavisFriendly
+</td>
+<td style="text-align:left;">
+As Chairman Mao said, “Theory into Practice “ and what better way to do that than a CRAN #rstats pkg <a href="https://t.co/gPMJlO3Vwc" class="uri">https://t.co/gPMJlO3Vwc</a>
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+terrychristiani
+</td>
+<td style="text-align:left;">
+This is always a great #rstats conference with real world solutions presented by ocmpanies using R in production. Register! <a href="https://t.co/MRsatZARXI" class="uri">https://t.co/MRsatZARXI</a>
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MilesMcBain
+</td>
+<td style="text-align:left;">
+OK I’ll dunk! Can someone please point me to a comprehensive explanation about the rules for the use of <code>.data</code>. Never works where I expect. 🤣🤣🤣 #tidyvert #dunkingontidy #rstats <a href="https://t.co/5uqRDcUhsm" class="uri">https://t.co/5uqRDcUhsm</a>
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BroVic
+</td>
+<td style="text-align:left;">
+R just keeps getting better and better. #rstats <a href="https://t.co/A4jCvrTThm" class="uri">https://t.co/A4jCvrTThm</a>
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="most-quoted" class="section level3 unnumbered">
+<h3>Most quoted</h3>
+<p><img src="figures/EXAMPLE/most-quoted-1.png" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+</div>
+<div id="media" class="section level1 tabset tabset-pills">
+<h1><span class="header-section-number">7</span> Media</h1>
+<div id="proportion-3" class="section level2 unnumbered">
+<h2>Proportion</h2>
+<p><img src="figures/EXAMPLE/has-media-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="top-10-3" class="section level2 unnumbered">
+<h2>Top 10</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+favorite_count
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+nnstats
+</td>
+<td style="text-align:left;">
+#rstats function of the day is stringi::stri_trans_general() because I’m using a dataset where they really cared about getting all the accents right in Finnish names and joining it with another dataset where they did not care at all <a href="https://t.co/UR6lbz8Wjj" class="uri">https://t.co/UR6lbz8Wjj</a>
+</td>
+<td style="text-align:right;">
+125
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+djnavarro
+</td>
+<td style="text-align:left;">
+good morning to the lovely #rstats people and to absolutely no-one else <a href="https://t.co/P3ZeZRK8Y9" class="uri">https://t.co/P3ZeZRK8Y9</a>
+</td>
+<td style="text-align:right;">
+72
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sophie_e_hill
+</td>
+<td style="text-align:left;">
+Me, about to run some regex that I carefully copy-pasted from stackoverflow and absolutely do not understand #Rstats <a href="https://t.co/KGdIwP7c6r" class="uri">https://t.co/KGdIwP7c6r</a>
+</td>
+<td style="text-align:right;">
+60
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IsabelleStevant
+</td>
+<td style="text-align:left;">
+And TADAAAA! This is a stage 11 Drosophila embryo in ggplot2 made with svg I drew with Inkscape, from which I exported the coordinates with <a href="https://t.co/FeB5coeM4w" class="uri">https://t.co/FeB5coeM4w</a> #rstats <a href="https://t.co/3rLgrDw03k" class="uri">https://t.co/3rLgrDw03k</a>
+</td>
+<td style="text-align:right;">
+51
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+r0mymendez
+</td>
+<td style="text-align:left;">
+#datosdemiercoles Esta semana arme el mapa🌎 con todos los capítulos de RLadies e indique los 20 capítulos con mas miembros. Buenos Aires es uno de ellos 😍 #rladies #visualizacion #r #tidyverse #rstats #rstatsES #r4ds_es #tidyverse El codigo 👉<a href="https://t.co/2iDNYeNufd" class="uri">https://t.co/2iDNYeNufd</a> <a href="https://t.co/ciVJxMTyBj" class="uri">https://t.co/ciVJxMTyBj</a>
+</td>
+<td style="text-align:right;">
+25
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+gp_pulipaka
+</td>
+<td style="text-align:left;">
+Free eBook: #MachineLearning at Enterprise Scale. #BigData #DataScience #Hadoop #ApacheSpark #Azure #AWS #GCP #AI #IoT #IIoT #Python #RStats #TensorFlow #Java #JavaScript #ReactJS #GoLang #CloudComputing #Serverless #DataScientist #Linux #Books <a href="https://t.co/ijO7Ggcpip" class="uri">https://t.co/ijO7Ggcpip</a> <a href="https://t.co/WQkbJMSfTZ" class="uri">https://t.co/WQkbJMSfTZ</a>
+</td>
+<td style="text-align:right;">
+20
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Joan_Gimenez
+</td>
+<td style="text-align:left;">
+Thanks to all the students of the 1st Stable Isotope Course Applied to Trophic Studies at <span class="citation">@ICMCSIC</span> <span class="citation">@BarcelonaOCEAN</span> <span class="citation">@icm_young</span> #stableisotopes #trophicecology #SIBER #tRophicposition #rstats <a href="https://t.co/XJUk2EgfJs" class="uri">https://t.co/XJUk2EgfJs</a>
+</td>
+<td style="text-align:right;">
+16
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ryanburge
+</td>
+<td style="text-align:left;">
+<p>The graph is ordered with the oldest median age at the top to the youngest at the bottom. It sorted into basically three categories: mostly mainline, mostly evangelical, then the other faiths/nones.</p>
+<p>I really just wanted to make a ggchicklet #dataviz <span class="citation">@hrbrmstr</span></p>
+#rstats <a href="https://t.co/Ci7rodwG91" class="uri">https://t.co/Ci7rodwG91</a>
+</td>
+<td style="text-align:right;">
+14
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+APonsero
+</td>
+<td style="text-align:left;">
+<p>My first #TidyTuesday. A simple plot looking at the revenue and number of franchises by decades. Had fun learning about secondary y-axis in #ggplot2 !</p>
+<p>Happy 4th ! 🎆</p>
+<p>Code: <a href="https://t.co/xTns4OJobn" class="uri">https://t.co/xTns4OJobn</a></p>
+#rstats #r4ds <a href="https://t.co/SnJ5HE4cKC" class="uri">https://t.co/SnJ5HE4cKC</a>
+</td>
+<td style="text-align:right;">
+13
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+aleszubajak
+</td>
+<td style="text-align:left;">
+<p>If I were doing a workshop at #WCSJ2019, which I’m not, I’d do it on data visualization for science reporting and it would definitely feature #rstats and satellite imagery.</p>
+Check out my latest <span class="citation">@storybench</span> tutorial on animating <span class="citation">@ESA</span> data in <span class="citation">@rstudio</span> <a href="https://t.co/9uJlSLf3s2" class="uri">https://t.co/9uJlSLf3s2</a> <a href="https://t.co/dp6VZ7hii1" class="uri">https://t.co/dp6VZ7hii1</a>
+</td>
+<td style="text-align:right;">
+12
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="section" class="section level1 unnumbered toc-ignore">
+<h1></h1>
+<div id="most-liked-image" class="section level2">
+<h2><span class="header-section-number">7.1</span> Most liked image</h2>
+<p><img src="http://pbs.twimg.com/media/D-vFrB3WsAA22Zg.png" /></p>
+</div>
+</div>
+<div id="tweet-text" class="section level1">
+<h1><span class="header-section-number">8</span> Tweet text</h1>
+<div id="word-cloud" class="section level2">
+<h2><span class="header-section-number">8.1</span> Word cloud</h2>
+<p>The top 100 words used 3 or more times.</p>
+<p><img src="figures/EXAMPLE/count-words-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="bigram-graph" class="section level2">
+<h2><span class="header-section-number">8.2</span> Bigram graph</h2>
+<p>Words that were tweeted next to each other at least 3 times.</p>
+<p><img src="figures/EXAMPLE/bigram-graph-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="topic-modelling" class="section level2">
+<h2><span class="header-section-number">8.3</span> Topic modelling</h2>
+<p>Top 10 words associated with 6 topics identified by LDA.</p>
+<p><img src="figures/EXAMPLE/topics-words-1.png" width="960" style="display: block; margin: auto;" /></p>
+<div id="representative-tweets" class="section level3 tabset tabset-fade">
+<h3><span class="header-section-number">8.3.1</span> Representative tweets</h3>
+<p>Most representative tweets for each topic</p>
+<div id="topic-1" class="section level4 unnumbered">
+<h4>Topic 1</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+gamma
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+r0mymendez
+</td>
+<td style="text-align:left;">
+#datosdemiercoles Esta semana arme el mapa🌎 con todos los capítulos de RLadies e indique los 20 capítulos con mas miembros. Buenos Aires es uno de ellos 😍 #rladies #visualizacion #r #tidyverse #rstats #rstatsES #r4ds_es #tidyverse El codigo 👉<a href="https://t.co/2iDNYeNufd" class="uri">https://t.co/2iDNYeNufd</a> <a href="https://t.co/ciVJxMTyBj" class="uri">https://t.co/ciVJxMTyBj</a>
+</td>
+<td style="text-align:right;">
+0.9978560
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+guamandseduardo
+</td>
+<td style="text-align:left;">
+<p>🆓📚2 Libros digitales escritos por Alejandro Quintela del Rio #Estadística Básica Edulcorada (usando #Rstats) 🔗<a href="https://t.co/XQ7Ofvkxw7" class="uri">https://t.co/XQ7Ofvkxw7</a> P.E.P.E 🔗<a href="https://t.co/SJ6CGpWnej" class="uri">https://t.co/SJ6CGpWnej</a></p>
+#AnálisisDeDatos #CienciaDeDatos #RStatsEs #Probabilidad | #Statistics #DataScience #DataAnalysis #bookdown <a href="https://t.co/dnyHl7Mcdt" class="uri">https://t.co/dnyHl7Mcdt</a>
+</td>
+<td style="text-align:right;">
+0.9970549
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+aleszubajak
+</td>
+<td style="text-align:left;">
+<p>If I were doing a workshop at #WCSJ2019, which I’m not, I’d do it on data visualization for science reporting and it would definitely feature #rstats and satellite imagery.</p>
+Check out my latest <span class="citation">@storybench</span> tutorial on animating <span class="citation">@ESA</span> data in <span class="citation">@rstudio</span> <a href="https://t.co/9uJlSLf3s2" class="uri">https://t.co/9uJlSLf3s2</a> <a href="https://t.co/dp6VZ7hii1" class="uri">https://t.co/dp6VZ7hii1</a>
+</td>
+<td style="text-align:right;">
+0.9964683
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+jmsjsph
+</td>
+<td style="text-align:left;">
+<p>This SAS macro outputs a program’s filepath (where that program is saved).</p>
+<p>It is very handy if you need to document the source of an report directly on that report!</p>
+<p><a href="https://t.co/odMkqsrMKD" class="uri">https://t.co/odMkqsrMKD</a></p>
+#sasusers #rstats #phdchat <a href="https://t.co/GczS1WmaHl" class="uri">https://t.co/GczS1WmaHl</a>
+</td>
+<td style="text-align:right;">
+0.9958482
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MabLabUF
+</td>
+<td style="text-align:left;">
+Very interesting thread, and I truly recommend R programmers to read the essay from <span class="citation">@matloff</span>. The importance of <span class="citation">@rstudio</span> in the #rstats ecosystem comes with great responsibility—one of them should be to teach solid foundations of base R, another to contribute to improve it. <a href="https://t.co/jniweVn0xF" class="uri">https://t.co/jniweVn0xF</a>
+</td>
+<td style="text-align:right;">
+0.9958482
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ryanburge
+</td>
+<td style="text-align:left;">
+<p>The graph is ordered with the oldest median age at the top to the youngest at the bottom. It sorted into basically three categories: mostly mainline, mostly evangelical, then the other faiths/nones.</p>
+<p>I really just wanted to make a ggchicklet #dataviz <span class="citation">@hrbrmstr</span></p>
+#rstats <a href="https://t.co/Ci7rodwG91" class="uri">https://t.co/Ci7rodwG91</a>
+</td>
+<td style="text-align:right;">
+0.9952977
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+nnstats
+</td>
+<td style="text-align:left;">
+#rstats function of the day is stringi::stri_trans_general() because I’m using a dataset where they really cared about getting all the accents right in Finnish names and joining it with another dataset where they did not care at all <a href="https://t.co/UR6lbz8Wjj" class="uri">https://t.co/UR6lbz8Wjj</a>
+</td>
+<td style="text-align:right;">
+0.9945790
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+zachbogart
+</td>
+<td style="text-align:left;">
+<p>You can build a lot of things in <span class="citation">@factoriogame</span>. Come explore their connections with the #Factorio Recipe Network. Built in #rstats with visNetwork.</p>
+<a href="https://t.co/598LGtaKYR" class="uri">https://t.co/598LGtaKYR</a> <a href="https://t.co/ZCNkYldUZH" class="uri">https://t.co/ZCNkYldUZH</a>
+</td>
+<td style="text-align:right;">
+0.9941305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+haematobot
+</td>
+<td style="text-align:left;">
+#rstats pokemon: has any function caught all of snake_case, camelCase, CamelCase, <a href="https://t.co/4zm69tnxj2" class="uri">https://t.co/4zm69tnxj2</a>, lowercase and UPPERCASE in its hundred parameters?
+</td>
+<td style="text-align:right;">
+0.9936010
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rvanmazijk
+</td>
+<td style="text-align:left;">
+First proper blogpost! My thoughts on running a workshop on data wrangling in R with the <code>tidyverse</code>, which I have just done! <a href="https://t.co/hTJUJzCBTy" class="uri">https://t.co/hTJUJzCBTy</a> #rstats #tidyverse #iamascientist
+</td>
+<td style="text-align:right;">
+0.9929665
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="topic-2" class="section level4 unnumbered">
+<h4>Topic 2</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+gamma
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+seabbs
+</td>
+<td style="text-align:left;">
+<p>Last week the UK pledged to contribute £467m a year for three years to the <span class="citation">@GlobalFund</span> - fighting #Tuberculosis, #HIV, and #Malaria. This post celebrates this by generating a series of TB incidence GIFs in #rstats, using #gganimate and #getTBinR.</p>
+<a href="https://t.co/Yjbnn5gqas" class="uri">https://t.co/Yjbnn5gqas</a> <a href="https://t.co/weEXBWQODo" class="uri">https://t.co/weEXBWQODo</a>
+</td>
+<td style="text-align:right;">
+0.9966358
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ichisa5
+</td>
+<td style="text-align:left;">
+Mi primer #datosdemiercoles! Independientemente del SO mucha gente comienza la semana descargando R! (link: <a href="https://t.co/vxTaExC3aC" class="uri">https://t.co/vxTaExC3aC</a>) #rstats #Rladies #tidyverse <a href="https://t.co/QMkJjjs3ye" class="uri">https://t.co/QMkJjjs3ye</a>
+</td>
+<td style="text-align:right;">
+0.9955901
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fistful_of_bass
+</td>
+<td style="text-align:left;">
+<p><span class="citation">@hrbrmstr</span> There are many roads to #rstats happiness, and as you can see, the others rock, too! Love and respect to <span class="citation">@MattDowle</span>, the <span class="citation">@rstudio</span> crew, <span class="citation">@rOpenSci</span> and all who have made our life easier and more productive. You all rock.</p>
+#datatableverse #rstats #rstatsfamily <a href="https://t.co/LyP80bP8er" class="uri">https://t.co/LyP80bP8er</a>
+</td>
+<td style="text-align:right;">
+0.9952977
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+stephstaph8
+</td>
+<td style="text-align:left;">
+Sapply won’t always return the same class of output - so if you always want to return a list, use lapply! Things I didn’t know but learned in this process! #R #rstats #debugging
+</td>
+<td style="text-align:right;">
+0.9941305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IsabelleStevant
+</td>
+<td style="text-align:left;">
+And TADAAAA! This is a stage 11 Drosophila embryo in ggplot2 made with svg I drew with Inkscape, from which I exported the coordinates with <a href="https://t.co/FeB5coeM4w" class="uri">https://t.co/FeB5coeM4w</a> #rstats <a href="https://t.co/3rLgrDw03k" class="uri">https://t.co/3rLgrDw03k</a>
+</td>
+<td style="text-align:right;">
+0.9941305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+carlishganzino
+</td>
+<td style="text-align:left;">
+#rstats thought of day: I decided while folding laundry that I would pair my socks without making them right-side-out first, and that I would right-side-out them as I needed them, and now I feel like I have a really good understanding of what lazy evaluation means.
+</td>
+<td style="text-align:right;">
+0.9936010
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+tidyversetweets
+</td>
+<td style="text-align:left;">
+R ggplot boxplot add lines for upper/lower bond, median #tidyverse #rstats <a href="https://t.co/NIld7FUsjr" class="uri">https://t.co/NIld7FUsjr</a>
+</td>
+<td style="text-align:right;">
+0.9929665
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+tidyversetweets
+</td>
+<td style="text-align:left;">
+add dot to each line based on a separate column using ggplot2 + linerange() #tidyverse #rstats <a href="https://t.co/Exow5RMY03" class="uri">https://t.co/Exow5RMY03</a>
+</td>
+<td style="text-align:right;">
+0.9929665
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+tidyversetweets
+</td>
+<td style="text-align:left;">
+Merging values from wide data frame into long data frame #tidyverse #rstats <a href="https://t.co/1Z4FwHrsyk" class="uri">https://t.co/1Z4FwHrsyk</a>
+</td>
+<td style="text-align:right;">
+0.9921923
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cortina_borja
+</td>
+<td style="text-align:left;">
+<p>My first #gganimate plot in #rstats in collaboration with <span class="citation">@HsinChen12</span></p>
+It was a lot easier than we thought, thanks <span class="citation">@thomasp85</span> <a href="https://t.co/QF8uKXmdnO" class="uri">https://t.co/QF8uKXmdnO</a>
+</td>
+<td style="text-align:right;">
+0.9912266
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="topic-3" class="section level4 unnumbered">
+<h4>Topic 3</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+gamma
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+2Engenheiros
+</td>
+<td style="text-align:left;">
+<p>Mais um da série de livros online e gratuitos da CRC Press (outras editoras fazem o mesmo, como a O’Reilly).</p>
+<p>Manuseando dados espaciais no R. Geocomputation with R: <a href="https://t.co/HVViz4xx17" class="uri">https://t.co/HVViz4xx17</a></p>
+#Rstats #Geocomputation <a href="https://t.co/ZyJTMElxo6" class="uri">https://t.co/ZyJTMElxo6</a>
+</td>
+<td style="text-align:right;">
+0.9970549
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+itschekkers
+</td>
+<td style="text-align:left;">
+the point of dplyr (&amp;amp; some other #tidyverse packages) is that they are abstracted at the right level. for most tasks, code isnt about wall time, its about functions being easy &amp;amp; expressive to write code quickly and readably #rstats / #datascience <a href="https://t.co/iTp0nEJdPc" class="uri">https://t.co/iTp0nEJdPc</a>
+</td>
+<td style="text-align:right;">
+0.9962833
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+APonsero
+</td>
+<td style="text-align:left;">
+<p>My first #TidyTuesday. A simple plot looking at the revenue and number of franchises by decades. Had fun learning about secondary y-axis in #ggplot2 !</p>
+<p>Happy 4th ! 🎆</p>
+<p>Code: <a href="https://t.co/xTns4OJobn" class="uri">https://t.co/xTns4OJobn</a></p>
+#rstats #r4ds <a href="https://t.co/SnJ5HE4cKC" class="uri">https://t.co/SnJ5HE4cKC</a>
+</td>
+<td style="text-align:right;">
+0.9958482
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Joan_Gimenez
+</td>
+<td style="text-align:left;">
+Thanks to all the students of the 1st Stable Isotope Course Applied to Trophic Studies at <span class="citation">@ICMCSIC</span> <span class="citation">@BarcelonaOCEAN</span> <span class="citation">@icm_young</span> #stableisotopes #trophicecology #SIBER #tRophicposition #rstats <a href="https://t.co/XJUk2EgfJs" class="uri">https://t.co/XJUk2EgfJs</a>
+</td>
+<td style="text-align:right;">
+0.9952977
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Aaron_Hawn
+</td>
+<td style="text-align:left;">
+<p>On July 3rd, 1863, the Battle of Gettysburg ended after Pickett’s disastrous charge.</p>
+<p>I spent some time visualizing causalities using the #tidyverse and #ggplot</p>
+#rstats <a href="https://t.co/mrBR78AKfU" class="uri">https://t.co/mrBR78AKfU</a>
+</td>
+<td style="text-align:right;">
+0.9949639
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+tidyversetweets
+</td>
+<td style="text-align:left;">
+Separating time-series data into half-hour chunks #tidyverse #rstats <a href="https://t.co/BpbKhNnzN2" class="uri">https://t.co/BpbKhNnzN2</a>
+</td>
+<td style="text-align:right;">
+0.9921923
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+tidyversetweets
+</td>
+<td style="text-align:left;">
+How to plot odd ratio from multiple logistic regression with CI in r #tidyverse #rstats <a href="https://t.co/7GP0QlOmAD" class="uri">https://t.co/7GP0QlOmAD</a>
+</td>
+<td style="text-align:right;">
+0.9921923
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+jangles
+</td>
+<td style="text-align:left;">
+The latest The Neville Hobson Daily! <a href="https://t.co/ZAi0WfHMIy" class="uri">https://t.co/ZAi0WfHMIy</a> Thanks to <span class="citation">@jasotweet</span> <span class="citation">@brunoamaral</span> <span class="citation">@RoanokeMaven</span> #ai #rstats
+</td>
+<td style="text-align:right;">
+0.9912266
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+jouni_helske
+</td>
+<td style="text-align:left;">
+<span class="citation">@IsabellaGhement</span> <span class="citation">@hadleywickham</span> <span class="citation">@djnavarro</span> <span class="citation">@MilesMcBain</span> I have used #rstats almost 15 years and used to teach it as well, but I don’t think I could do it anymore with all these tidyevals and NSEs. Might as well learn <span class="citation">@JuliaLanguage</span> now ;) #blasphemy
+</td>
+<td style="text-align:right;">
+0.9912266
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+tidyversetweets
+</td>
+<td style="text-align:left;">
+What should I modify to in ggplot to get suitable plot size #tidyverse #rstats <a href="https://t.co/jhDm43G4YT" class="uri">https://t.co/jhDm43G4YT</a>
+</td>
+<td style="text-align:right;">
+0.9899883
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="topic-4" class="section level4 unnumbered">
+<h4>Topic 4</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+gamma
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+PyData
+</td>
+<td style="text-align:left;">
+<p>Keep up with new developments from <span class="citation">@NumFOCUS</span> sponsored projects — join our monthly email newsletter: <a href="https://t.co/xJeTIhY0Zt" class="uri">https://t.co/xJeTIhY0Zt</a></p>
+#jupyter #matplotlib #pandas #python #pydata #julialang #rstats #bigdata #machinelearning #dataviz #openscience #opendata #opensource #oss #datascience <a href="https://t.co/nhYTchhp92" class="uri">https://t.co/nhYTchhp92</a>
+</td>
+<td style="text-align:right;">
+0.9967882
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RaphaelS101
+</td>
+<td style="text-align:left;">
+What’s going on?? Package size is 5.1Mb, R directory is 4.4Mb but no matter how hard I try I can’t find the function or class causing such a large size, everything is written in R6 and surely functions that construct R6 objects internally shouldn’t be large? #rstats #r #coding
+</td>
+<td style="text-align:right;">
+0.9964683
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+earnlinerscom
+</td>
+<td style="text-align:left;">
+<p>Repost &amp;amp; Follow: Twitter <a href="https://t.co/DykUQDeddU" class="uri">https://t.co/DykUQDeddU</a> Facebook <a href="https://t.co/13lzYZ92C4" class="uri">https://t.co/13lzYZ92C4</a> Skype <a href="https://t.co/cGF9Fm8RBE" class="uri">https://t.co/cGF9Fm8RBE</a></p>
+<p>Buy BTC <a href="https://t.co/JhKkmRPkPf" class="uri">https://t.co/JhKkmRPkPf</a></p>
+<p>Try Investbox @ Yobit <a href="https://t.co/4HkOR2vCMa" class="uri">https://t.co/4HkOR2vCMa</a></p>
+Read: <a href="https://t.co/EhOQcfCE3G" class="uri">https://t.co/EhOQcfCE3G</a> To <span class="citation">@WekuloNasokho</span> #eliminate #rstats
+</td>
+<td style="text-align:right;">
+0.9960778
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mdancho84
+</td>
+<td style="text-align:left;">
+Looking at going beyond #Excel, #PowerBI, or #Tableau? #R is an amazingly powerful tool for business analysis and data science. In my upcoming #webinar, I’m going to show off R’s #capabilities! Then you can decide. Register Here: <a href="https://t.co/iqgjOKvPQh" class="uri">https://t.co/iqgjOKvPQh</a> #Rstats <a href="https://t.co/MTs2S5tESq" class="uri">https://t.co/MTs2S5tESq</a>
+</td>
+<td style="text-align:right;">
+0.9960778
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+marcin_stepniak
+</td>
+<td style="text-align:left;">
+<p>I am trying to draw isochrones (isodistances) around #publictransport stops (#GTFS) in #rstats (as part of rmarkdown document). Now I’m testing <span class="citation">@ors_news</span> #openrouteservice R API client by <span class="citation">@andrzejkoles</span>. 👇 is where I am now…</p>
+#MSCA #MSCA_CAlCULUS <a href="https://t.co/MVansWdwYT" class="uri">https://t.co/MVansWdwYT</a>
+</td>
+<td style="text-align:right;">
+0.9958482
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+_ColinFay
+</td>
+<td style="text-align:left;">
+#RStats dev crowd Anyone has experience with submitting to CRAN a 📦 that writes file to disk? We submitted {golem} and one feedback was our functions should only write/save files if the user has specified a directory.
+</td>
+<td style="text-align:right;">
+0.9958482
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NumFOCUS
+</td>
+<td style="text-align:left;">
+<p>Become a NumFOCUS member to give back to the #opensource #datascience tools you use every day!</p>
+<p>Join us: <a href="https://t.co/HLWXKVD1if" class="uri">https://t.co/HLWXKVD1if</a></p>
+#python #pydata #julialang #rstats #bayesian #bigdata #machinelearning #dataviz #openscience #opendata <a href="https://t.co/Qaa1naLC2A" class="uri">https://t.co/Qaa1naLC2A</a>
+</td>
+<td style="text-align:right;">
+0.9952977
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TwoLanternsAdv
+</td>
+<td style="text-align:left;">
+<p>Democratic nomination race in the betting markets in gif form. Thanks to <span class="citation">@thomasp85</span> for the easy gganimate package.</p>
+#politicalrisk #rstats #uspolitics #elections2020 <a href="https://t.co/XW0SLgrXnM" class="uri">https://t.co/XW0SLgrXnM</a>
+</td>
+<td style="text-align:right;">
+0.9952977
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WeAreRLadies
+</td>
+<td style="text-align:left;">
+Bonus: ‘panelr’ also has two functions ‘long_panel()’ and ‘wide_panel()’ similar to the ones in ‘reshape’ in Stata. <a href="https://t.co/3CnIoaCdCw" class="uri">https://t.co/3CnIoaCdCw</a> Check out a great blog on this package here! <a href="https://t.co/e5ZDluY8r1" class="uri">https://t.co/e5ZDluY8r1</a> #Rstats #econtwitter
+</td>
+<td style="text-align:right;">
+0.9949639
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+grandegerman
+</td>
+<td style="text-align:left;">
+#rstats I’ve used the glmer() function but plot_model() functions do not make very pretty plots. #GLMM #Statistics any ideas? <span class="citation">@DrMowinckels</span> <span class="citation">@dmi3k</span>
+</td>
+<td style="text-align:right;">
+0.9929665
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="topic-5" class="section level4 unnumbered">
+<h4>Topic 5</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+gamma
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+gp_pulipaka
+</td>
+<td style="text-align:left;">
+VMware Introduces Education Services To Train Teams On VMware Cloud On #AWS. #BigData #Analytics #DataScience #AI #MachineLearning #AI #IoT #IIoT #PyTorch #Python #RStats #Java #JavaScript #ReactJS #GoLang #CloudComputing #Serverless #DataScientist #Linux <a href="https://t.co/HUm94Lo6YD" class="uri">https://t.co/HUm94Lo6YD</a> <a href="https://t.co/O4LjQfkkA5" class="uri">https://t.co/O4LjQfkkA5</a>
+</td>
+<td style="text-align:right;">
+0.9975612
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+gp_pulipaka
+</td>
+<td style="text-align:left;">
+Free eBook: #MachineLearning at Enterprise Scale. #BigData #DataScience #Hadoop #ApacheSpark #Azure #AWS #GCP #AI #IoT #IIoT #Python #RStats #TensorFlow #Java #JavaScript #ReactJS #GoLang #CloudComputing #Serverless #DataScientist #Linux #Books <a href="https://t.co/ijO7Ggcpip" class="uri">https://t.co/ijO7Ggcpip</a> <a href="https://t.co/WQkbJMSfTZ" class="uri">https://t.co/WQkbJMSfTZ</a>
+</td>
+<td style="text-align:right;">
+0.9974743
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+wil_bielert
+</td>
+<td style="text-align:left;">
+RT <span class="citation">@FelixEVargas</span>: Scikit-learn: Machine Learning in Python. #BigData #Analytics #DataScience #AI #MachineLearning #IoT #IIoT #PyTorch #Python #RStats #TensorFlow #Java #JavaScript #ReactJS #GoLang #CloudComputing #Serverless #DataScientist #Linux … <a href="https://t.co/O4g5tyvP3k" class="uri">https://t.co/O4g5tyvP3k</a>
+</td>
+<td style="text-align:right;">
+0.9971723
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+wil_bielert
+</td>
+<td style="text-align:left;">
+RT <span class="citation">@AnalyticsFrance</span>: What’s the Difference Between a Data Engineer, a Data Analyst and a #DataScientist? #BigData #Analytics #DataScience #MachineLearning #AI #IoT #IIoT #PyTorch #Python #RStats #TensorFlow #Java #JavaScript #ReactJS #GoLang #CloudComputing #Serverless #Linu…
+</td>
+<td style="text-align:right;">
+0.9971723
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+gp_pulipaka
+</td>
+<td style="text-align:left;">
+Real-time Recommendations by <span class="citation">@neo4j</span> Featuring <span class="citation">@gp_pulipaka</span> <span class="citation">@_nicolemargaret</span>. #BigData #Analytics #Ne04J #NoSQL #MachineLearning #DataScience #AI #IoT #IIoT #Python #RStats #JavaScript #ReactJS #GoLang #CloudComputing #Serverless #DataScientist #Linux <a href="https://t.co/Sch4MpWT5X" class="uri">https://t.co/Sch4MpWT5X</a> <a href="https://t.co/itAu3yi2eg" class="uri">https://t.co/itAu3yi2eg</a>
+</td>
+<td style="text-align:right;">
+0.9971723
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MassGrid
+</td>
+<td style="text-align:left;">
+hello，we are MassGrid #BigData #Analytics #DataScience #AI #MachineLearning #BlockChain #FinTech #Ethereum #IoT #IIoT #Python #RStats #TensorFlow #Java #JavaScript #ReactJS #GoLang #CloudComputing #Serverless #DataScientist #Linux #books #crypto #altcoin #mercatox <a href="https://t.co/l0pubUsIjB" class="uri">https://t.co/l0pubUsIjB</a>
+</td>
+<td style="text-align:right;">
+0.9971723
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DataScientistFr
+</td>
+<td style="text-align:left;">
+Raven Protocol for BlockChain. #BigData #Analytics #DataScience #AI #MachineLearning #AI #FinTech #BlockChain #CryptoCurrency #IoT #IIoT #PyTorch #Python #RStats #Java #JavaScript #ReactJS #GoLang #CloudComputing #Serverless #DataScientist #Linux …
+</td>
+<td style="text-align:right;">
+0.9970549
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+gp_pulipaka
+</td>
+<td style="text-align:left;">
+Tractica AI Research Report. #BigData #Analytics #DataScience #AI #MachineLearning #IoT #IIoT #PyTorch #Python #RStats #TensorFlow #Java #JavaScript #ReactJS #GoLang #CloudComputing #Serverless #DataScientist #Linux <a href="https://t.co/BBqnkKKoRe" class="uri">https://t.co/BBqnkKKoRe</a> <a href="https://t.co/7TAtlq0YgZ" class="uri">https://t.co/7TAtlq0YgZ</a>
+</td>
+<td style="text-align:right;">
+0.9970549
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+gp_pulipaka
+</td>
+<td style="text-align:left;">
+60+ Real-World Projects Implemented for Commercial Clients: Find it in the Book <span class="citation">@MirrorReview1</span>. #BigData #Analytics #DataScience #AI #MachineLearning #IIoT #Python #RStats #JavaScript #ReactJS #GoLang #CloudComputing #Serverless #DataScientist #Linux <a href="https://t.co/68zv7AViPj" class="uri">https://t.co/68zv7AViPj</a> <a href="https://t.co/JY48kc28Qr" class="uri">https://t.co/JY48kc28Qr</a>
+</td>
+<td style="text-align:right;">
+0.9970549
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AnalyticsFr
+</td>
+<td style="text-align:left;">
+An Implementation of a #DeepLearning Recommendation model (DLRM). #BigData #Analytics #DataScience #AI #MachineLearning #RecSys #IoT #IIoT #PyTorch #Python #RStats #TensorFlow #JavaScript #ReactJS #GoLang #CloudComputing #Serverless #DataScientist #Linux …
+</td>
+<td style="text-align:right;">
+0.9969273
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FelixEVargas
+</td>
+<td style="text-align:left;">
+An Implementation of a #DeepLearning Recommendation model (DLRM). #BigData #Analytics #DataScience #AI #MachineLearning #RecSys #IoT #IIoT #PyTorch #Python #RStats #TensorFlow #JavaScript #ReactJS #GoLang #CloudComputing #Serverless #DataScientist #Linux …
+</td>
+<td style="text-align:right;">
+0.9969273
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="topic-6" class="section level4 unnumbered">
+<h4>Topic 6</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+gamma
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+statsanddatasci
+</td>
+<td style="text-align:left;">
+#Statistician #Statistics #Maths #Math #Stats #Econometrics #DataAnalysis #Estadistico #Estadistica #Matematicas #Econometria #StatisticalHumor #AnalisisDeDatos #DataScience #CienciaDeDatos #DataScientist #Memes #Meme #Jokes #HumorEstadístico #Rstats #Rstatses #Python <a href="https://t.co/KH45U7Qexp" class="uri">https://t.co/KH45U7Qexp</a>
+</td>
+<td style="text-align:right;">
+0.9969273
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+chowthedog
+</td>
+<td style="text-align:left;">
+<p>A data driven method for generating worked examples as feedback by Thomas Price and Tiffany Barnes. Seems relevant to <span class="citation">@ludmila_janda</span>’s pres on block based tidyverse coding? #rstats #EDM2019MTL</p>
+<a href="https://t.co/WWB4Np33MK" class="uri">https://t.co/WWB4Np33MK</a> <a href="https://t.co/KoxgGYs67A" class="uri">https://t.co/KoxgGYs67A</a>
+</td>
+<td style="text-align:right;">
+0.9964683
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+UseR2019_Conf
+</td>
+<td style="text-align:left;">
+Sad and angry to hear that, while France has the privilege to host one of the most important international conferences in data science, <span class="citation">@Place_Beauvau</span> has denied a visa to two active Nigerian members of the R community: <span class="citation">@Denironyx</span> and <span class="citation">@Godskid_CFC</span>. #rstats
+</td>
+<td style="text-align:right;">
+0.9958482
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dataquestio
+</td>
+<td style="text-align:left;">
+<p>This is a really great data visualization tutorial that’ll help you take your ggplot2 charts from good to great.</p>
+<p>(Want to learn this stuff? Our #rstats data viz course teaches ggplot2 and is free: <a href="https://t.co/nTOsgryIYF" class="uri">https://t.co/nTOsgryIYF</a> )</p>
+<a href="https://t.co/1q012xilFV" class="uri">https://t.co/1q012xilFV</a>
+</td>
+<td style="text-align:right;">
+0.9949639
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Elliot_Meador
+</td>
+<td style="text-align:left;">
+<span class="citation">@WeAreRLadies</span> igraph, I switched from SPSS/graphing programmes once <span class="citation">@MikeRSpencer</span> show me how powerful #rstats is for network analysis. It’s easily the best thing I’ve done for my career (and sanity)!
+</td>
+<td style="text-align:right;">
+0.9949639
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+jsonbecker
+</td>
+<td style="text-align:left;">
+Every time I have a problem with gather or spread, it seems the answer is to couple it with unite and separate bc of composite key, and I think this is bad developer ergonomics for a common case #rstats
+</td>
+<td style="text-align:right;">
+0.9949639
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jemus42
+</td>
+<td style="text-align:left;">
+<p>&amp;gt; We’re pleased (and a little embarassed) to announce the release of dplyr 0.8.3 on CRAN 😬 ! <a href="https://t.co/PYRXPagomk" class="uri">https://t.co/PYRXPagomk</a></p>
+And that’s why I really like this community &amp;lt;3 #rstats
+</td>
+<td style="text-align:right;">
+0.9941305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RLadiesTampa
+</td>
+<td style="text-align:left;">
+Don’t forget! <span class="citation">@datakritter</span> is teaching blogdown on 7/13. She’s posted some useful info on our <span class="citation">@Meetup</span> site, if you’d like to get started! #RLadies #RStats #Diversity <a href="https://t.co/uvMfEebg74" class="uri">https://t.co/uvMfEebg74</a>
+</td>
+<td style="text-align:right;">
+0.9941305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+jilly_mackay
+</td>
+<td style="text-align:left;">
+I am always proud of <span class="citation">@syamira07537183</span> - this is a hard project, interdisciplinary, autoethnographic, mixed methods research, and she’s dived into #rstats too. She’s awesome. #VetEd2019
+</td>
+<td style="text-align:right;">
+0.9941305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DerFredo
+</td>
+<td style="text-align:left;">
+Posted by R on Ralf Stubner, now on R-bloggers: Numerical integration over an infinite interval in Rcpp #rstats <a href="https://t.co/rpz8AGCI3y" class="uri">https://t.co/rpz8AGCI3y</a>
+</td>
+<td style="text-align:right;">
+0.9929665
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CRANberriesFeed
+</td>
+<td style="text-align:left;">
+CRAN updates: bigreadr dplyr DSAIDE gmvarkit replyr scorecard spacyr <a href="https://t.co/y5W2NTKSXT" class="uri">https://t.co/y5W2NTKSXT</a> #rstats
+</td>
+<td style="text-align:right;">
+0.9929665
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div id="software" class="section level1">
+<h1><span class="header-section-number">9</span> Software</h1>
+<p>Software mentioned in Tweets with links to GitHub, BitBucket, Bioconductor or CRAN.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Link</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">cheatsheets</td>
+<td align="left">GitHub</td>
+<td align="left"><a href="https://github.com/rstudio/cheatsheets/raw/master/parallel_computation.pdf" class="uri">https://github.com/rstudio/cheatsheets/raw/master/parallel_computation.pdf</a></td>
+</tr>
+<tr class="even">
+<td align="left">cheatsheets</td>
+<td align="left">GitHub</td>
+<td align="left"><a href="https://github.com/rstudio/cheatsheets/raw/master/keras.pdf" class="uri">https://github.com/rstudio/cheatsheets/raw/master/keras.pdf</a></td>
+</tr>
+<tr class="odd">
+<td align="left">data</td>
+<td align="left">GitHub</td>
+<td align="left"><a href="https://github.com/rdatatable/data.table/wiki/articles" class="uri">https://github.com/rdatatable/data.table/wiki/articles</a></td>
+</tr>
+<tr class="even">
+<td align="left">gargoyle</td>
+<td align="left">GitHub</td>
+<td align="left"><a href="https://github.com/colinfay/gargoyle" class="uri">https://github.com/colinfay/gargoyle</a></td>
+</tr>
+<tr class="odd">
+<td align="left">panelr</td>
+<td align="left">CRAN</td>
+<td align="left"><a href="https://CRAN.R-project.org/package=panelr" class="uri">https://CRAN.R-project.org/package=panelr</a></td>
+</tr>
+<tr class="even">
+<td align="left">R</td>
+<td align="left">GitHub</td>
+<td align="left"><a href="https://github.com/ichisa/r" class="uri">https://github.com/ichisa/r</a></td>
+</tr>
+<tr class="odd">
+<td align="left">redshiftTools</td>
+<td align="left">GitHub</td>
+<td align="left"><a href="https://github.com/sicarul/redshifttools" class="uri">https://github.com/sicarul/redshifttools</a></td>
+</tr>
+<tr class="even">
+<td align="left">Rvisualisations_tidytuesday</td>
+<td align="left">GitHub</td>
+<td align="left"><a href="https://github.com/aponsero/rvisualisations_tidytuesday/blob/master/week27_19/data_exploration.r" class="uri">https://github.com/aponsero/rvisualisations_tidytuesday/blob/master/week27_19/data_exploration.r</a></td>
+</tr>
+<tr class="odd">
+<td align="left">TidyverseSkeptic</td>
+<td align="left">GitHub</td>
+<td align="left"><a href="https://github.com/matloff/tidyverseskeptic" class="uri">https://github.com/matloff/tidyverseskeptic</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="session-info" class="section level1 unnumbered">
+<h1>Session info</h1>
+<pre><code>## R version 3.6.0 (2019-04-26)
+## Platform: x86_64-apple-darwin15.6.0 (64-bit)
+## Running under: macOS Mojave 10.14.6
+## 
+## Matrix products: default
+## BLAS:   /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRblas.0.dylib
+## LAPACK: /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRlapack.dylib
+## 
+## locale:
+## [1] en_AU.UTF-8/en_AU.UTF-8/en_AU.UTF-8/C/en_AU.UTF-8/en_AU.UTF-8
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+##  [1] fs_1.3.1           here_0.1           knitr_1.25        
+##  [4] magick_2.2         webshot_0.5.1      viridis_0.5.1     
+##  [7] viridisLite_0.3.0  wordcloud_2.6      RColorBrewer_1.1-2
+## [10] ggraph_2.0.0       ggrepel_0.8.1      ggplot2_3.2.1     
+## [13] topicmodels_0.2-8  tidytext_0.2.2     igraph_1.2.4.1    
+## [16] stringr_1.4.0      purrr_0.3.3        forcats_0.4.0     
+## [19] lubridate_1.7.4    tidyr_1.0.0        dplyr_0.8.3       
+## [22] rtweet_0.6.9      
+## 
+## loaded via a namespace (and not attached):
+##  [1] httr_1.4.1         tidygraph_1.1.2    jsonlite_1.6      
+##  [4] assertthat_0.2.1   askpass_1.1        highr_0.8         
+##  [7] stats4_3.6.0       yaml_2.2.0         slam_0.1-45       
+## [10] pillar_1.4.2       backports_1.1.5    lattice_0.20-38   
+## [13] glue_1.3.1         digest_0.6.22      polyclip_1.10-0   
+## [16] colorspace_1.4-1   htmltools_0.4.0    Matrix_1.2-17     
+## [19] plyr_1.8.4         tm_0.7-6           pkgconfig_2.0.3   
+## [22] scales_1.0.0       processx_3.4.1     tweenr_1.0.1      
+## [25] ggforce_0.3.1      tibble_2.1.3       openssl_1.4.1     
+## [28] generics_0.0.2     farver_1.1.0       ellipsis_0.3.0    
+## [31] withr_2.1.2        lazyeval_0.2.2     cli_1.1.0         
+## [34] NLP_0.2-0          magrittr_1.5       crayon_1.3.4      
+## [37] ps_1.3.0           evaluate_0.14      tokenizers_0.2.1  
+## [40] janeaustenr_0.1.5  fansi_0.4.0        SnowballC_0.6.0   
+## [43] MASS_7.3-51.4      xml2_1.2.2         tools_3.6.0       
+## [46] lifecycle_0.1.0    munsell_0.5.0      callr_3.3.2       
+## [49] compiler_3.6.0     rlang_0.4.0        grid_3.6.0        
+## [52] labeling_0.3       rmarkdown_1.16     gtable_0.3.0      
+## [55] curl_4.2           reshape2_1.4.3     graphlayouts_0.5.0
+## [58] R6_2.4.0           gridExtra_2.3      utf8_1.1.4        
+## [61] zeallot_0.1.0      rprojroot_1.3-2    modeltools_0.2-22 
+## [64] stringi_1.4.3      parallel_3.6.0     Rcpp_1.0.2        
+## [67] vctrs_0.2.0        tidyselect_0.2.5   xfun_0.10</code></pre>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

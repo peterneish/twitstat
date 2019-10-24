@@ -1,0 +1,17 @@
+name: "twitter-stats"
+output_dir: "../docs"
+navbar:
+  title: "Twitter stats"
+  left:
+    - text: "Home"
+      href: index.html
+  right:
+    - text: "About"
+      href: about.html
+output:
+  html_document:
+    theme: paper
+    highlight: default
+    number_sections: yes
+    toc: yes
+    toc_float: yes
