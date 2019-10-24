@@ -4,8 +4,9 @@ subtitle: "An analysis of #RDAPlenary"
 date: "`r Sys.time()`"
 params:
     hashtag: "#RDAPlenary"
+    
     # Times
-    start_day: "2019-10-21"
+    start_day: "2019-10-23"
     end_day: "2019-10-25"
     timezone: "Europe/Helsinki"
     # Plot theme and colours
@@ -124,7 +125,9 @@ tweets <- tweets %>%
 
 # Introduction
 
-An analysis of tweets from the `r params$hashtag` hashtag. A total of
+An analysis of tweets from the `r params$hashtag` hashtag for the 
+[14th Research Data Alliance Plenary][RDA14], 23-25 October 2019 at
+Helsinki, Finland. A total of
 `r nrow(tweets)` tweets from `r length(unique(tweets$screen_name))` users were 
 collected using the `rtweet` R package.
 
@@ -137,3 +140,4 @@ collected using the `rtweet` R package.
 ```{r session-info}
 sessionInfo()
 ```
+[RDA14]: https://www.rd-alliance.org/plenaries/rdas-14th-plenary-helsinki-finland
