@@ -398,7 +398,7 @@ top %>%
 ### Most retweeted {.unnumbered}
 
 ```{r most-retweeted}
-#tweet_shot(top$status_id[1])
+tweet_shot(top$status_id[1])
 ```
 
 ## Likes {.tabset .tabset-pills}

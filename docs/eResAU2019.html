@@ -1,0 +1,2150 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>eResAU2019</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 64px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h2 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h3 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h4 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h5 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h6 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Twitter stats</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="about.html">About</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">eResAU2019</h1>
+<h3 class="subtitle">An analysis of #eResAU2019</h3>
+<h4 class="date">2019-10-24 13:11:06</h4>
+
+</div>
+
+
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Parameter</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">hashtag</td>
+<td align="left">#eResAU2019</td>
+</tr>
+<tr class="even">
+<td align="left">start_day</td>
+<td align="left">2019-10-21</td>
+</tr>
+<tr class="odd">
+<td align="left">end_day</td>
+<td align="left">2019-10-25</td>
+</tr>
+<tr class="even">
+<td align="left">timezone</td>
+<td align="left">Australia/Melbourne</td>
+</tr>
+<tr class="odd">
+<td align="left">theme</td>
+<td align="left">theme_light</td>
+</tr>
+<tr class="even">
+<td align="left">accent</td>
+<td align="left">dodgerblue</td>
+</tr>
+<tr class="odd">
+<td align="left">accent2</td>
+<td align="left">#8EC7FF</td>
+</tr>
+<tr class="even">
+<td align="left">kcore</td>
+<td align="left">2</td>
+</tr>
+<tr class="odd">
+<td align="left">topics_k</td>
+<td align="left">6</td>
+</tr>
+<tr class="even">
+<td align="left">bigram_filter</td>
+<td align="left">3</td>
+</tr>
+<tr class="odd">
+<td align="left">fixed</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="left">seed</td>
+<td align="left">132323</td>
+</tr>
+</tbody>
+</table>
+<div id="introduction" class="section level1">
+<h1><span class="header-section-number">1</span> Introduction</h1>
+<p>An analysis of tweets from the #eResAU2019 hashtag. A total of 1062 tweets from 279 users were collected using the <code>rtweet</code> R package.</p>
+</div>
+<div id="timeline" class="section level1">
+<h1><span class="header-section-number">2</span> Timeline</h1>
+<div id="tweets-by-day" class="section level2">
+<h2><span class="header-section-number">2.1</span> Tweets by day</h2>
+<p><img src="figures/eResAU2019/tweets-by-day-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="tweets-by-day-and-time" class="section level2">
+<h2><span class="header-section-number">2.2</span> Tweets by day and time</h2>
+<p>Filtered for dates 2019-10-21 - 2019-10-25 in the Australia/Melbourne timezone.</p>
+<p><img src="figures/eResAU2019/tweets-by-day-hour-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="users" class="section level1">
+<h1><span class="header-section-number">3</span> Users</h1>
+<div id="top-tweeters" class="section level2 tabset tabset-pills">
+<h2><span class="header-section-number">3.1</span> Top tweeters</h2>
+<div id="overall" class="section level3 unnumbered">
+<h3>Overall</h3>
+<p><img src="figures/eResAU2019/tweets-top-users-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="original" class="section level3 unnumbered">
+<h3>Original</h3>
+<p><img src="figures/eResAU2019/tweets-top-users-orig-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="retweets" class="section level3 unnumbered">
+<h3>Retweets</h3>
+<p><img src="figures/eResAU2019/tweets-top-users-retweet-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="retweet-proportion" class="section level2">
+<h2><span class="header-section-number">3.2</span> Retweet proportion</h2>
+<p><img src="figures/eResAU2019/tweets-retweet-prop-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="top-tweeters-timeline" class="section level2">
+<h2><span class="header-section-number">3.3</span> Top tweeters timeline</h2>
+<p><img src="figures/eResAU2019/tweets-top-users-time-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="top-tweeters-by-day" class="section level2 tabset tabset-pills">
+<h2><span class="header-section-number">3.4</span> Top tweeters by day</h2>
+<div id="overall-1" class="section level3 unnumbered tabset tabset-fade">
+<h3>Overall</h3>
+<div id="day-1" class="section level4 unnumbered">
+<h4>Day 1</h4>
+<p><img src="figures/eResAU2019/tweets-top-users-day1-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="day-2" class="section level4 unnumbered">
+<h4>Day 2</h4>
+<p><img src="figures/eResAU2019/tweets-top-users-day2-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="day-3" class="section level4 unnumbered">
+<h4>Day 3</h4>
+<p><img src="figures/eResAU2019/tweets-top-users-day3-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="day-4" class="section level4 unnumbered">
+<h4>Day 4</h4>
+<p><img src="figures/eResAU2019/tweets-top-users-day4-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="day-5" class="section level4 unnumbered">
+<h4>Day 5</h4>
+<p><img src="figures/eResAU2019/tweets-top-users-day5-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="original-1" class="section level3 unnumbered tabset tabset-fade">
+<h3>Original</h3>
+<div id="day-1-1" class="section level4 unnumbered">
+<h4>Day 1</h4>
+<p><img src="figures/eResAU2019/tweets-top-users-orig-day1-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="day-2-1" class="section level4 unnumbered">
+<h4>Day 2</h4>
+<p><img src="figures/eResAU2019/tweets-top-users-orig-day2-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="day-3-1" class="section level4 unnumbered">
+<h4>Day 3</h4>
+<p><img src="figures/eResAU2019/tweets-top-users-orig-day3-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="day-4-1" class="section level4 unnumbered">
+<h4>Day 4</h4>
+<p><img src="figures/eResAU2019/tweets-top-users-orig-day4-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="day-5-1" class="section level4 unnumbered">
+<h4>Day 5</h4>
+<p><img src="figures/eResAU2019/tweets-top-users-orig-day5-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="retweets-1" class="section level3 unnumbered tabset tabset-fade">
+<h3>Retweets</h3>
+<div id="day-1-2" class="section level4 unnumbered">
+<h4>Day 1</h4>
+<p><img src="figures/eResAU2019/tweets-top-users-retweets-day1-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="day-2-2" class="section level4 unnumbered">
+<h4>Day 2</h4>
+<p><img src="figures/eResAU2019/tweets-top-users-retweets-day2-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="day-3-2" class="section level4 unnumbered">
+<h4>Day 3</h4>
+<p><img src="figures/eResAU2019/tweets-top-users-retweets-day3-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="day-4-2" class="section level4 unnumbered">
+<h4>Day 4</h4>
+<p><img src="figures/eResAU2019/tweets-top-users-retweets-day4-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="day-5-2" class="section level4 unnumbered">
+<h4>Day 5</h4>
+<p><img src="figures/eResAU2019/tweets-top-users-retweets-day5-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+</div>
+</div>
+<div id="sources" class="section level1">
+<h1><span class="header-section-number">4</span> Sources</h1>
+<p><img src="figures/eResAU2019/tweets-top-sources-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="networks" class="section level1">
+<h1><span class="header-section-number">5</span> Networks</h1>
+<div id="replies" class="section level2">
+<h2><span class="header-section-number">5.1</span> Replies</h2>
+<p>The “replies network”, composed from users who reply directly to one another, coloured by PageRank.</p>
+<p><img src="figures/eResAU2019/reply-network-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="mentions" class="section level2">
+<h2><span class="header-section-number">5.2</span> Mentions</h2>
+<p>The “mentions network”, where users mention other users in their tweets. Filtered for a k-core of 2. Node colour and size adjusted according to PageRank score.</p>
+<p><img src="figures/eResAU2019/mentions-network-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="tweet-types" class="section level1">
+<h1><span class="header-section-number">6</span> Tweet types</h1>
+<div id="retweets-2" class="section level2 tabset tabset-pills">
+<h2><span class="header-section-number">6.1</span> Retweets</h2>
+<div id="proportion" class="section level3 unnumbered">
+<h3>Proportion</h3>
+<p><img src="figures/eResAU2019/is-retweet-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="count" class="section level3 unnumbered">
+<h3>Count</h3>
+<p><img src="figures/eResAU2019/retweet-count-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="top-10" class="section level3 unnumbered">
+<h3>Top 10</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+retweet_count
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+NCInews
+</td>
+<td style="text-align:left;">
+The #eResAU2019 exhibition features something new: the NCRIS Avenue! Booths from nationally funded research infrastructure facilities from all over the country, all together right here. Now that’s some #NCRISImpact. <a href="https://t.co/iz34gV6kHe" class="uri">https://t.co/iz34gV6kHe</a>
+</td>
+<td style="text-align:right;">
+13
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SianWoolcock1
+</td>
+<td style="text-align:left;">
+“How to we make it easier for researchers to share their data? Policy isn’t enough. Combination of capabilty/ opportunity/ motivation is required.” Slide/presenter : Dr Michelle Kahe #eResAU2019 #OA #OpenData <a href="https://t.co/g5eC8B6Uyj" class="uri">https://t.co/g5eC8B6Uyj</a>
+</td>
+<td style="text-align:right;">
+12
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sjcporter
+</td>
+<td style="text-align:left;">
+In preparation for our #eResAu2019 talk tomorrow on the physiome journal, here is a quick video on how we are integrating <span class="citation">@figshare</span>, <span class="citation">@overleaf</span> and <span class="citation">@gigantumscience</span> <a href="https://t.co/kcVdSB9MAG" class="uri">https://t.co/kcVdSB9MAG</a> <a href="https://t.co/8GwkCFJuKd" class="uri">https://t.co/8GwkCFJuKd</a>
+</td>
+<td style="text-align:right;">
+11
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sarasrking
+</td>
+<td style="text-align:left;">
+Humanities session starting with Rere-No-A-Rangi Pope - “Ka mua, ka muri: Looking back in order to move forward.” By working with messy historical data, connecting families with their missing ancestors, we are walking backwards into the future. #eResAU2019 #digitalhumanities
+</td>
+<td style="text-align:right;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1n9r1d
+</td>
+<td style="text-align:left;">
+Need a lot of data to do #MachineLearning - good for correlation but not causation; caution needed with biases in those datasets - Rosie Hicks from <span class="citation">@ARDC_AU</span> #eResAU2019 <a href="https://t.co/WYp4Pp2ifJ" class="uri">https://t.co/WYp4Pp2ifJ</a>
+</td>
+<td style="text-align:right;">
+9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+figshare
+</td>
+<td style="text-align:left;">
+Announcing the winners of ‘Visualise your thesis 2019’ at #eResAU2019 - see them all at <a href="https://t.co/IoTBoHCbjv" class="uri">https://t.co/IoTBoHCbjv</a> #VYT2019 #VisualiseThesis <a href="https://t.co/0urAj4rkGV" class="uri">https://t.co/0urAj4rkGV</a>
+</td>
+<td style="text-align:right;">
+9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AusBiocommons
+</td>
+<td style="text-align:left;">
+What to know more about the Australian BioCommons? Hear all about this new <span class="citation">@BioplatformsAus</span> initiative today 4.30pm <span class="citation">@AeRO_eResearch</span> #eResAU2019. Assoc Director Dr Jeff Christiansen: Aus BioCommons - an exemplar of international engagement in research infrastructure #NCRISImpact
+</td>
+<td style="text-align:right;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+VisualiseThesis
+</td>
+<td style="text-align:left;">
+📢 It’s finally here 🤩! The entries in the 2019 Visualise Your Thesis Competition are now live on <span class="citation">@figshare</span> ✨ ▶️ Check out all the entries ahead of tomorrow’s announcement at #eResAu2019 🥳<a href="https://t.co/Fxh2HVlvbx" class="uri">https://t.co/Fxh2HVlvbx</a> #VYT2019 #VisualiseThesis
+</td>
+<td style="text-align:right;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Info_Aus
+</td>
+<td style="text-align:left;">
+Australia’s biggest financial and political transparency project using open data is at <a href="https://t.co/zeOK7eOawa" class="uri">https://t.co/zeOK7eOawa</a> #eResAU2019
+</td>
+<td style="text-align:right;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DataIndigenous
+</td>
+<td style="text-align:left;">
+Prof Mark Finanane of <span class="citation">@Griffith_Uni</span> describing the Prosecution Project, digitalising, structuring and modelling Australia’s historical criminal data dataverse. #eResAU2019 #DataSummit #ARDC <a href="https://t.co/CHPIxwbnTO" class="uri">https://t.co/CHPIxwbnTO</a>
+</td>
+<td style="text-align:right;">
+8
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="most-retweeted" class="section level3 unnumbered">
+<h3>Most retweeted</h3>
+</div>
+</div>
+<div id="likes" class="section level2 tabset tabset-pills">
+<h2><span class="header-section-number">6.2</span> Likes</h2>
+<div id="proportion-1" class="section level3 unnumbered">
+<h3>Proportion</h3>
+<p><img src="figures/eResAU2019/has-favorite-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="count-1" class="section level3 unnumbered">
+<h3>Count</h3>
+<p><img src="figures/eResAU2019/favorite-count-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="top-10-1" class="section level3 unnumbered">
+<h3>Top 10</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+favorite_count
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+clmcavaney
+</td>
+<td style="text-align:left;">
+I brought my own keep cup, but #eResAU2019 has <span class="citation">@biopakpackaging</span> cups (coating made from plant based products - so recyclable) and also crockery this year. Making our conference more sustainable. <span class="citation">@AeRO_eResearch</span> <a href="https://t.co/SNLDLoqoT6" class="uri">https://t.co/SNLDLoqoT6</a>
+</td>
+<td style="text-align:right;">
+30
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+n_simons
+</td>
+<td style="text-align:left;">
+Awesome all women powerhouse panel at the Skills &amp;amp; Training BoF #eResAU2019 <a href="https://t.co/RYIhBNm6hT" class="uri">https://t.co/RYIhBNm6hT</a>
+</td>
+<td style="text-align:right;">
+29
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SianWoolcock1
+</td>
+<td style="text-align:left;">
+“How to we make it easier for researchers to share their data? Policy isn’t enough. Combination of capabilty/ opportunity/ motivation is required.” Slide/presenter : Dr Michelle Kahe #eResAU2019 #OA #OpenData <a href="https://t.co/g5eC8B6Uyj" class="uri">https://t.co/g5eC8B6Uyj</a>
+</td>
+<td style="text-align:right;">
+26
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SianWoolcock1
+</td>
+<td style="text-align:left;">
+Do we need the ‘e’ in eResearch? Rosie Hicks at #eResAu2019 argues its just research.
+</td>
+<td style="text-align:right;">
+21
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+VisualiseThesis
+</td>
+<td style="text-align:left;">
+📢 It’s finally here 🤩! The entries in the 2019 Visualise Your Thesis Competition are now live on <span class="citation">@figshare</span> ✨ ▶️ Check out all the entries ahead of tomorrow’s announcement at #eResAu2019 🥳<a href="https://t.co/Fxh2HVlvbx" class="uri">https://t.co/Fxh2HVlvbx</a> #VYT2019 #VisualiseThesis
+</td>
+<td style="text-align:right;">
+21
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sarasrking
+</td>
+<td style="text-align:left;">
+Humanities session starting with Rere-No-A-Rangi Pope - “Ka mua, ka muri: Looking back in order to move forward.” By working with messy historical data, connecting families with their missing ancestors, we are walking backwards into the future. #eResAU2019 #digitalhumanities
+</td>
+<td style="text-align:right;">
+20
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sjcporter
+</td>
+<td style="text-align:left;">
+In preparation for our #eResAu2019 talk tomorrow on the physiome journal, here is a quick video on how we are integrating <span class="citation">@figshare</span>, <span class="citation">@overleaf</span> and <span class="citation">@gigantumscience</span> <a href="https://t.co/kcVdSB9MAG" class="uri">https://t.co/kcVdSB9MAG</a> <a href="https://t.co/8GwkCFJuKd" class="uri">https://t.co/8GwkCFJuKd</a>
+</td>
+<td style="text-align:right;">
+20
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1n9r1d
+</td>
+<td style="text-align:left;">
+The last time I wore an inifinity symbol ∞ on a T-shirt was when working in heritage digital preservation and archiving - this augurs well for research data <span class="citation">@AARNet</span> ! #eResAU2019 <a href="https://t.co/FS33zStuLP" class="uri">https://t.co/FS33zStuLP</a>
+</td>
+<td style="text-align:right;">
+19
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TzenniferW
+</td>
+<td style="text-align:left;">
+Welcome to country and blessing for #eResAU2019 <a href="https://t.co/SF620bDwHe" class="uri">https://t.co/SF620bDwHe</a>
+</td>
+<td style="text-align:right;">
+19
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+VisualiseThesis
+</td>
+<td style="text-align:left;">
+Congratulations to our inaugural winner Annaclaire McDonald for ‘Fantastic Metals &amp;amp; Where to Phyt Them​’ from <span class="citation">@UTSEngage</span> at #eResAU2019 <a href="https://t.co/oCjjmVrTOK" class="uri">https://t.co/oCjjmVrTOK</a> via <span class="citation">@figshare</span> #VYT2019 supported by <span class="citation">@UTSlibrary</span> #ChequeIsInTheMail
+</td>
+<td style="text-align:right;">
+19
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="most-likes" class="section level3 unnumbered">
+<h3>Most likes</h3>
+<p><img src="figures/eResAU2019/most-favorited-1.png" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="quotes" class="section level2 tabset tabset-pills">
+<h2><span class="header-section-number">6.3</span> Quotes</h2>
+<div id="proportion-2" class="section level3 unnumbered">
+<h3>Proportion</h3>
+<p><img src="figures/eResAU2019/is-quote-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="count-2" class="section level3 unnumbered">
+<h3>Count</h3>
+<p><img src="figures/eResAU2019/quotes-count-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="top-10-2" class="section level3 unnumbered">
+<h3>Top 10</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+quote_count
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+sjcporter
+</td>
+<td style="text-align:left;">
+#eResAU2019 <a href="https://t.co/f5hpF0UDSh" class="uri">https://t.co/f5hpF0UDSh</a>
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+digitalsci
+</td>
+<td style="text-align:left;">
+One for the #eResAU2019 crowd! <span class="citation">@sjcporter</span> has also added a tweet with a link to the nifty interactive version. Check it out at <span class="citation">@figshare</span>’s booth or online! <a href="https://t.co/bE0X7ipSRR" class="uri">https://t.co/bE0X7ipSRR</a>
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+overleaf
+</td>
+<td style="text-align:left;">
+Our friend and colleague <span class="citation">@sjcporter</span> is showcasing what Australasian Research looks like at #eResAU2019 - created using <span class="citation">@overleaf</span> <span class="citation">@figshare</span> <span class="citation">@gigantumscience</span> and <span class="citation">@dimensions</span>. Pop by the <span class="citation">@figshare</span> booth to find out more or check out the interactive version - <a href="https://t.co/UnzK0bUWTY" class="uri">https://t.co/UnzK0bUWTY</a> <a href="https://t.co/rrAhnIgwLm" class="uri">https://t.co/rrAhnIgwLm</a>
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+VisualiseThesis
+</td>
+<td style="text-align:left;">
+Adventures in visualisation <span class="citation">@sjcporter</span> is giving us a personal tour of his work at #eResAU2019 <a href="https://t.co/HAxwRX5jUP" class="uri">https://t.co/HAxwRX5jUP</a>
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+unilibrary
+</td>
+<td style="text-align:left;">
+Put on your dancing shoes, it’s Visualise Your Thesis Awards season💃Take a look at all this incredible research! #VYT2019 #VisualiseThesis #eResAu2019 <a href="https://t.co/lpcqg3TBR6" class="uri">https://t.co/lpcqg3TBR6</a>
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FurEnough
+</td>
+<td style="text-align:left;">
+<p>The International #VYT2019 comp is ON! So many excellent entries and fascinating research projects! Check them out in the gallery below and check out my entry here 🐾<a href="https://t.co/SMMeP5kDB3" class="uri">https://t.co/SMMeP5kDB3</a></p>
+Waiting with bated breath for the announcement at #eResAu2019 tomorrow!😬 <a href="https://t.co/qQtvwBhuUy" class="uri">https://t.co/qQtvwBhuUy</a>
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TERN_Aus
+</td>
+<td style="text-align:left;">
+Wonderful to be at the eResearch Australasia Conference! Drop by the TERN booth to find out how our NCRIS-enabled research infrastructure (data, research sites, virtual labs, data visualisation &amp;amp; publishing tools etc) can help you. Or just come say hi! #eResAU2019 #NCRISimpact <a href="https://t.co/LOwvAKqIQJ" class="uri">https://t.co/LOwvAKqIQJ</a>
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ANFFHQ
+</td>
+<td style="text-align:left;">
+NCRIS is being represented in style at #eResAU2019 – get in touch if you want to know more about what NCRIS is and how it enables ANFF to overcome barriers to research. #NCRISImpact <a href="https://t.co/QCPHpvCYyf" class="uri">https://t.co/QCPHpvCYyf</a>
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ragamouf
+</td>
+<td style="text-align:left;">
+#eresAU2019 <span class="citation">@tynedaile</span> into the workshop discussion in funding incentives <a href="https://t.co/X78ZdUbzFM" class="uri">https://t.co/X78ZdUbzFM</a>
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AeRO_eResearch
+</td>
+<td style="text-align:left;">
+<p>Great to see momentum building for #eResAU2019 #eReserach Australasia conference - looking forward to seeing you all there!</p>
+<a href="https://t.co/RN3OBreDxD" class="uri">https://t.co/RN3OBreDxD</a>
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="most-quoted" class="section level3 unnumbered">
+<h3>Most quoted</h3>
+<p><img src="figures/eResAU2019/most-quoted-1.png" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+</div>
+<div id="media" class="section level1 tabset tabset-pills">
+<h1><span class="header-section-number">7</span> Media</h1>
+<div id="proportion-3" class="section level2 unnumbered">
+<h2>Proportion</h2>
+<p><img src="figures/eResAU2019/has-media-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="top-10-3" class="section level2 unnumbered">
+<h2>Top 10</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+favorite_count
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+clmcavaney
+</td>
+<td style="text-align:left;">
+I brought my own keep cup, but #eResAU2019 has <span class="citation">@biopakpackaging</span> cups (coating made from plant based products - so recyclable) and also crockery this year. Making our conference more sustainable. <span class="citation">@AeRO_eResearch</span> <a href="https://t.co/SNLDLoqoT6" class="uri">https://t.co/SNLDLoqoT6</a>
+</td>
+<td style="text-align:right;">
+30
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+n_simons
+</td>
+<td style="text-align:left;">
+Awesome all women powerhouse panel at the Skills &amp;amp; Training BoF #eResAU2019 <a href="https://t.co/RYIhBNm6hT" class="uri">https://t.co/RYIhBNm6hT</a>
+</td>
+<td style="text-align:right;">
+29
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SianWoolcock1
+</td>
+<td style="text-align:left;">
+“How to we make it easier for researchers to share their data? Policy isn’t enough. Combination of capabilty/ opportunity/ motivation is required.” Slide/presenter : Dr Michelle Kahe #eResAU2019 #OA #OpenData <a href="https://t.co/g5eC8B6Uyj" class="uri">https://t.co/g5eC8B6Uyj</a>
+</td>
+<td style="text-align:right;">
+26
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sjcporter
+</td>
+<td style="text-align:left;">
+In preparation for our #eResAu2019 talk tomorrow on the physiome journal, here is a quick video on how we are integrating <span class="citation">@figshare</span>, <span class="citation">@overleaf</span> and <span class="citation">@gigantumscience</span> <a href="https://t.co/kcVdSB9MAG" class="uri">https://t.co/kcVdSB9MAG</a> <a href="https://t.co/8GwkCFJuKd" class="uri">https://t.co/8GwkCFJuKd</a>
+</td>
+<td style="text-align:right;">
+20
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1n9r1d
+</td>
+<td style="text-align:left;">
+The last time I wore an inifinity symbol ∞ on a T-shirt was when working in heritage digital preservation and archiving - this augurs well for research data <span class="citation">@AARNet</span> ! #eResAU2019 <a href="https://t.co/FS33zStuLP" class="uri">https://t.co/FS33zStuLP</a>
+</td>
+<td style="text-align:right;">
+19
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TzenniferW
+</td>
+<td style="text-align:left;">
+Welcome to country and blessing for #eResAU2019 <a href="https://t.co/SF620bDwHe" class="uri">https://t.co/SF620bDwHe</a>
+</td>
+<td style="text-align:right;">
+19
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MarcoDeLa83
+</td>
+<td style="text-align:left;">
+Thanks <span class="citation">@aDiddyy</span> and the whole <span class="citation">@PawseyCentre</span> team at #eResAU2019 for this awesome birthday cake!! 😍😍 <a href="https://t.co/Ussv8oIUYD" class="uri">https://t.co/Ussv8oIUYD</a>
+</td>
+<td style="text-align:right;">
+18
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DataIndigenous
+</td>
+<td style="text-align:left;">
+Prof Mark Finanane of <span class="citation">@Griffith_Uni</span> describing the Prosecution Project, digitalising, structuring and modelling Australia’s historical criminal data dataverse. #eResAU2019 #DataSummit #ARDC <a href="https://t.co/CHPIxwbnTO" class="uri">https://t.co/CHPIxwbnTO</a>
+</td>
+<td style="text-align:right;">
+18
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1n9r1d
+</td>
+<td style="text-align:left;">
+Need a lot of data to do #MachineLearning - good for correlation but not causation; caution needed with biases in those datasets - Rosie Hicks from <span class="citation">@ARDC_AU</span> #eResAU2019 <a href="https://t.co/WYp4Pp2ifJ" class="uri">https://t.co/WYp4Pp2ifJ</a>
+</td>
+<td style="text-align:right;">
+17
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LizWalkleyHall
+</td>
+<td style="text-align:left;">
+Whenever we talk about the “research community” I’m reminded of this quote #eResAU2019 <a href="https://t.co/Zqy6cnp2uj" class="uri">https://t.co/Zqy6cnp2uj</a>
+</td>
+<td style="text-align:right;">
+17
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="section" class="section level1 unnumbered toc-ignore">
+<h1></h1>
+<div id="most-liked-image" class="section level2">
+<h2><span class="header-section-number">7.1</span> Most liked image</h2>
+<p><img src="http://pbs.twimg.com/media/EHcI3XMUcAEfx02.jpg" /></p>
+</div>
+</div>
+<div id="tweet-text" class="section level1">
+<h1><span class="header-section-number">8</span> Tweet text</h1>
+<div id="word-cloud" class="section level2">
+<h2><span class="header-section-number">8.1</span> Word cloud</h2>
+<p>The top 100 words used 3 or more times.</p>
+<p><img src="figures/eResAU2019/count-words-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="bigram-graph" class="section level2">
+<h2><span class="header-section-number">8.2</span> Bigram graph</h2>
+<p>Words that were tweeted next to each other at least 3 times.</p>
+<p><img src="figures/eResAU2019/bigram-graph-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="topic-modelling" class="section level2">
+<h2><span class="header-section-number">8.3</span> Topic modelling</h2>
+<p>Top 10 words associated with 6 topics identified by LDA.</p>
+<p><img src="figures/eResAU2019/topics-words-1.png" width="960" style="display: block; margin: auto;" /></p>
+<div id="representative-tweets" class="section level3 tabset tabset-fade">
+<h3><span class="header-section-number">8.3.1</span> Representative tweets</h3>
+<p>Most representative tweets for each topic</p>
+<div id="topic-1" class="section level4 unnumbered">
+<h4>Topic 1</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+gamma
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+RCCUQ
+</td>
+<td style="text-align:left;">
+RCC eResearch Analyst <span class="citation">@DoktrNick</span> will present a talk with Loretta Davis of <span class="citation">@AeRO_eResearch</span> about the rapid growth of Hacky Hours &amp;amp; a national initiative to uplift eResearch support skills &amp;amp; encourage community-driven collaboration - at #eresAU2019 today (Wed 23 October) 2–2:20pm
+</td>
+<td style="text-align:right;">
+0.9952396
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TERN_Aus
+</td>
+<td style="text-align:left;">
+Wonderful to be at the eResearch Australasia Conference! Drop by the TERN booth to find out how our NCRIS-enabled research infrastructure (data, research sites, virtual labs, data visualisation &amp;amp; publishing tools etc) can help you. Or just come say hi! #eResAU2019 #NCRISimpact <a href="https://t.co/LOwvAKqIQJ" class="uri">https://t.co/LOwvAKqIQJ</a>
+</td>
+<td style="text-align:right;">
+0.9948095
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AeRO_eResearch
+</td>
+<td style="text-align:left;">
+.@AeRO_eResearch <span class="citation">@retta_davis</span> and <span class="citation">@qcifltd</span> <span class="citation">@DoktrNick</span> will be speaking on Building the #eResearch #Support Community – A National Initiative to Uplift eResearch Support Skills and Encourage Community-Driven Collaboration - 2pm B3 #eResAU2019 <a href="https://t.co/Hn9Maapu5Y" class="uri">https://t.co/Hn9Maapu5Y</a>
+</td>
+<td style="text-align:right;">
+0.9942940
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AARNet
+</td>
+<td style="text-align:left;">
+Data packaging 📦 and movement 📤📥 happens at varying points in research and data curation workflows. Come to the digital preservation and data packaging BoF at 11:40 in B2 convened by <span class="citation">@bumphead</span> <span class="citation">@ptsefton</span> <span class="citation">@DigiGav</span> <span class="citation">@jayechats</span> #eResAu2019 #OCFL #provenance #digipres #versions
+</td>
+<td style="text-align:right;">
+0.9942940
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FurEnough
+</td>
+<td style="text-align:left;">
+<p>The International #VYT2019 comp is ON! So many excellent entries and fascinating research projects! Check them out in the gallery below and check out my entry here 🐾<a href="https://t.co/SMMeP5kDB3" class="uri">https://t.co/SMMeP5kDB3</a></p>
+Waiting with bated breath for the announcement at #eResAu2019 tomorrow!😬 <a href="https://t.co/qQtvwBhuUy" class="uri">https://t.co/qQtvwBhuUy</a>
+</td>
+<td style="text-align:right;">
+0.9939958
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AeRO_eResearch
+</td>
+<td style="text-align:left;">
+Got a suggestion for the conference? Like to highlight something good? Drop by the #eResAU2019 conference feedback session - A2 12pm today! You can also complete the post-conference survey or email <a href="mailto:loretta@aero.edu.au" class="email">loretta@aero.edu.au</a> #eResearch <a href="https://t.co/F6am6niPsc" class="uri">https://t.co/F6am6niPsc</a>
+</td>
+<td style="text-align:right;">
+0.9936648
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GinnyBarbour
+</td>
+<td style="text-align:left;">
+If you’re at #eResAU2019 go see <span class="citation">@VisualiseThesis</span> in poster area incl for announcement of winners tonight. I was one of the judges but no clues from me on who won 🤐! All the entries are amazing but hope you’ll agree the winners are particularly special. #VYT2019 #VisualiseThesis <a href="https://t.co/Rt86cf49TF" class="uri">https://t.co/Rt86cf49TF</a>
+</td>
+<td style="text-align:right;">
+0.9936648
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AmandaMiottoGU
+</td>
+<td style="text-align:left;">
+Dr Elisha Chiware talking about the Multidisciplinary data infrastructure for South African Research: developing a workforce for a national data node <span class="citation">@ElishaChiware</span> #eResAU2019 <a href="https://t.co/W2lLcJKRks" class="uri">https://t.co/W2lLcJKRks</a>
+</td>
+<td style="text-align:right;">
+0.9932951
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+VisualiseThesis
+</td>
+<td style="text-align:left;">
+The countdown is on – only 7 days to go till the VYT international announcement at #eResAU2019. With so many amazing entries our judges <span class="citation">@GinnyBarbour</span> <span class="citation">@cameralibre</span> <span class="citation">@wragge</span> are no doubt having a hard time picking a winner 🤔🎓🎉🥳 #VYT2019 #TLDRyourThesis
+</td>
+<td style="text-align:right;">
+0.9932951
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+backwardsboy
+</td>
+<td style="text-align:left;">
+Can the #frbr model be applied in developing policy about when to mint #doi for evolving data or research activity? #eResAU2019 thanks <span class="citation">@snet_jklump</span> for bringing these together - research librarians love this.
+</td>
+<td style="text-align:right;">
+0.9928797
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TzenniferW
+</td>
+<td style="text-align:left;">
+Training &amp;amp; skill building in eResearch: bringing the community together BoF session. ‘Go co’ &amp;amp; Training without borders -nice concepts. Collaboration &amp;amp; positive intent. #eResAU2019 <a href="https://t.co/0mmrxY5j0i" class="uri">https://t.co/0mmrxY5j0i</a>
+</td>
+<td style="text-align:right;">
+0.9928797
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AARNet
+</td>
+<td style="text-align:left;">
+<span class="citation">@ErinGLib</span> from <span class="citation">@ANULibrary</span> talking from a library technologist’s perspective : there is value in using research technologies and cloud infrastructure in research library practices with digital collections. #digipres #eResAu2019 <a href="https://t.co/OgYtYRBWYi" class="uri">https://t.co/OgYtYRBWYi</a>
+</td>
+<td style="text-align:right;">
+0.9928797
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AARNet
+</td>
+<td style="text-align:left;">
+A few places left at our Jupyter Jam workshop on Friday, with our #eResearch team <span class="citation">@sarasrking</span> <span class="citation">@carinakemp8</span> <span class="citation">@1n9r1d</span> Alex Reid. Bring your coding and data munging tips and tricks to the session. #eResAu2019 🤹‍♀️💻🤹🏼‍♂️
+</td>
+<td style="text-align:right;">
+0.9928797
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CarinaKemp8
+</td>
+<td style="text-align:left;">
+‘All researchers need to be able to access our fast network and the cloud infrastructure that sits on top. This is why AARNet is working in Data Curation with the research community’ ⁦<span class="citation">@1n9r1d</span>⁩ ⁦<span class="citation">@AARNet</span>⁩ #cloudstor #eResAU2019 <a href="https://t.co/HlYRKJJykK" class="uri">https://t.co/HlYRKJJykK</a>
+</td>
+<td style="text-align:right;">
+0.9928797
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+aurin_org_au
+</td>
+<td style="text-align:left;">
+Thank you Richard Ferras from <span class="citation">@ARDC_AU</span> great update on your successes with driving a community around gaining CoreTrustSeal Certification. Another element in the datasphere to support &amp;amp; enhance research impacts! #eResAU2019 <span class="citation">@AeRO_eResearch</span> <a href="https://t.co/tb99WWwY7s" class="uri">https://t.co/tb99WWwY7s</a>
+</td>
+<td style="text-align:right;">
+0.9928797
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="topic-2" class="section level4 unnumbered">
+<h4>Topic 2</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+gamma
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Scarperella
+</td>
+<td style="text-align:left;">
+Diversity in Data, Tools, Users, and Impacts: the AURIN Journey. #eResAU2019 Australian Urban Research Infrastructure Network (AURIN) is the single largest e-Research resource for finding and accessing data and analytical tools related to the study of and planning for
+</td>
+<td style="text-align:right;">
+0.9954289
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AeRO_eResearch
+</td>
+<td style="text-align:left;">
+#eResAU2019 keynote address Unlocking Scientific Discovery with a Confluence of Simulation, Modelling and Machine Learning <span class="citation">@DellEMC</span> APJ Chief Technology Officer, Supercomputing &amp;amp; Artificial Intelligence <span class="citation">@hpc_geek</span> + <span class="citation">@zebrax0r</span> Chief Technology Officer <span class="citation">@RCCUQ</span> <span class="citation">@UQ_News</span> <a href="https://t.co/NOe3Foa48h" class="uri">https://t.co/NOe3Foa48h</a>
+</td>
+<td style="text-align:right;">
+0.9952396
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sarasrking
+</td>
+<td style="text-align:left;">
+Humanities session starting with Rere-No-A-Rangi Pope - “Ka mua, ka muri: Looking back in order to move forward.” By working with messy historical data, connecting families with their missing ancestors, we are walking backwards into the future. #eResAU2019 #digitalhumanities
+</td>
+<td style="text-align:right;">
+0.9950338
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RCCUQ
+</td>
+<td style="text-align:left;">
+On now at #eResAU2019: RCC Director <span class="citation">@davidaabramson</span> will act as chair for a curated exhibitor session, featuring speakers from Amazon Web Services, Hewlett Packard Enterprise and Dell Technologies, 11:20am–12:40pm.
+</td>
+<td style="text-align:right;">
+0.9942940
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SianWoolcock1
+</td>
+<td style="text-align:left;">
+<p>In the last 10 years the Cost of compute and data storage has radically decreased but #DataVelocity, #DataVelocity and #ComputePerformance has concurrently radically increased.</p>
+<p>Slide/Presenter Andrew Underwood <span class="citation">@DellEMC</span></p>
+#eResAU2019 #eresearch <a href="https://t.co/goA4eMJ2mD" class="uri">https://t.co/goA4eMJ2mD</a>
+</td>
+<td style="text-align:right;">
+0.9939958
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+aurin_org_au
+</td>
+<td style="text-align:left;">
+This week we are exhibiting <span class="citation">@AeRO_eResearch</span> #eResearch #Diversity Opening remarks by Prof. Matthew Bellgard the 5 Vs of data act as the gravity in the #eResearch universe…. love this! Looking forward to more insights from our community this week!#eResAU2019 <a href="https://t.co/9aYCCt0yMR" class="uri">https://t.co/9aYCCt0yMR</a>
+</td>
+<td style="text-align:right;">
+0.9939958
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GinnyBarbour
+</td>
+<td style="text-align:left;">
+Great to hear about <span class="citation">@AeRO_eResearch</span> eResearch Champions program with founding Champions <span class="citation">@DoktrNick</span> <span class="citation">@AmandaMiottoGU</span> 🙂 Should we be including OA skills in these? <span class="citation">@GPHackyHour</span> is aiming to cover wide range of such skills. Clearly a huge demand. <a href="https://t.co/RIVV6YDudX" class="uri">https://t.co/RIVV6YDudX</a> #EResAU2019
+</td>
+<td style="text-align:right;">
+0.9936648
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DataIndigenous
+</td>
+<td style="text-align:left;">
+Prof Mark Finanane of <span class="citation">@Griffith_Uni</span> describing the Prosecution Project, digitalising, structuring and modelling Australia’s historical criminal data dataverse. #eResAU2019 #DataSummit #ARDC <a href="https://t.co/CHPIxwbnTO" class="uri">https://t.co/CHPIxwbnTO</a>
+</td>
+<td style="text-align:right;">
+0.9936648
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ahd1903
+</td>
+<td style="text-align:left;">
+Second talk for #eResAU2019’s #SmartCities #BOF: Michael Rigby from <span class="citation">@aurin_org_au</span> about “The Australian Urban Research Infrastructure Network (AURIN) provides access to data and tools for researchers and policy makers across Australia.”
+</td>
+<td style="text-align:right;">
+0.9936648
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+katykat
+</td>
+<td style="text-align:left;">
+You can access Dr Michelle Krahe’s paper here: Research data management in practice - Michelle A Krahe, Julie Toohey, Malcolm Wolski, et al <a href="https://t.co/9eOd3dwXbv" class="uri">https://t.co/9eOd3dwXbv</a> #eResAu2019
+</td>
+<td style="text-align:right;">
+0.9932951
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="topic-3" class="section level4 unnumbered">
+<h4>Topic 3</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+gamma
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+AeRO_eResearch
+</td>
+<td style="text-align:left;">
+Solution Showcases on now! #eResAU2019 1. #GSKY scalable standards compliant #data service, Nigel Rees 2. National federated p’form connecting primary &amp;amp; secondary care data for health services #research, Javier Haurat 3.SmartFarm Data Mgmt, Kieran Murphy <a href="https://t.co/TFT4Y8QZio" class="uri">https://t.co/TFT4Y8QZio</a>
+</td>
+<td style="text-align:right;">
+0.9960564
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+gsainsbury86
+</td>
+<td style="text-align:left;">
+Interesting view pt on #data #breach from Prof. Keith McNeil from QLD Health. “No one ever died from breach of privacy, lots of people have died from poor info sharing” #eResAU2019 I agree in principle but huge potential value in that data to bad actors - ins. companies etc.
+</td>
+<td style="text-align:right;">
+0.9957658
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+aurin_org_au
+</td>
+<td style="text-align:left;">
+Cracking start to day two <span class="citation">@AeRO_eResearch</span> #eResAU2019 Come &amp;amp; see our Director Dr Jane Hunter talk about the Diversity of Data that the #AURINWorkbench offers researchers. Then Dr Michael Rigby will be speaking about developing our water &amp;amp; energy data! See you there! <a href="https://t.co/CSYhwa63QZ" class="uri">https://t.co/CSYhwa63QZ</a>
+</td>
+<td style="text-align:right;">
+0.9948095
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+qcifltd
+</td>
+<td style="text-align:left;">
+Visit the QCIF booth at #eResAU2019. Talk to the QCIF, <span class="citation">@RCCUQ</span> &amp;amp;/or <span class="citation">@QFAB_Bioinfo</span> staff, pick up some merchandise (good quality tea towels &amp;amp; screen/lens cloths) &amp;amp; enter our door prize. 😀🎁🎁🎁 <a href="https://t.co/MpdOkbtDKA" class="uri">https://t.co/MpdOkbtDKA</a>
+</td>
+<td style="text-align:right;">
+0.9939958
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RCCUQ
+</td>
+<td style="text-align:left;">
+Visit the QCIF booth at #eresAU2019 and pick up our MeDiCI data fabric tea towels and CAMERA lens cloths. Enter the door prize too — <span class="citation">@qcifltd</span> goes to great <em>lengths</em> to come up with these guessing games. 😉 <a href="https://t.co/UvHr3agWo6" class="uri">https://t.co/UvHr3agWo6</a>
+</td>
+<td style="text-align:right;">
+0.9939958
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NeSI_NZ
+</td>
+<td style="text-align:left;">
+Data movement BoF - NeSI’s Nick Jones <span class="citation">@nickdjones</span> &amp;amp; Brian Flaherty <span class="citation">@taftan</span> w/ <span class="citation">@globus</span>’s Kyle Chard talking data mgmt, access &amp;amp; platforms. #eResAU2019 <a href="https://t.co/zg7Hwthi5F" class="uri">https://t.co/zg7Hwthi5F</a>
+</td>
+<td style="text-align:right;">
+0.9936648
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SianWoolcock1
+</td>
+<td style="text-align:left;">
+Should add that I quietly spoke with the presenter afterwards &amp;amp; she without question agreed it was insensitive &amp;amp; said she would remove immediately &amp;amp; not use again. Just a reminder to us all to remember the unintentional impact of our content / data. Care essential. #eResAu2019
+</td>
+<td style="text-align:right;">
+0.9932951
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AeRO_eResearch
+</td>
+<td style="text-align:left;">
+Enjoyed #eResAU2019? Come to #C3DIS Collaborative Conference on Computational and Data Intensive Science - 16-20 March in #Melbourne <a href="https://t.co/ohYfdPiUDJ" class="uri">https://t.co/ohYfdPiUDJ</a> #eResearch #datascience #data #hpc <a href="https://t.co/FI6aAKmPv8" class="uri">https://t.co/FI6aAKmPv8</a>
+</td>
+<td style="text-align:right;">
+0.9928797
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+VisualiseThesis
+</td>
+<td style="text-align:left;">
+2nd place winner #VYT2019 Congratulations to Donovan Garcia-Ceron from <span class="citation">@LaTrobe</span> with ‘Exploring Extracellular Vesicles From Plant Fungal Pathogens’​ <a href="https://t.co/742OdHK7IF" class="uri">https://t.co/742OdHK7IF</a> via <span class="citation">@figshare</span> at #eResAU2019 supported by <span class="citation">@LTUlibrary</span>
+</td>
+<td style="text-align:right;">
+0.9928797
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+APOorgau
+</td>
+<td style="text-align:left;">
+Keith McNeil (QLD Health) speaking about the critical role of information sharing in innovation and improving outcomes. APO is proud to be playing its part! #eResAU2019 <a href="https://t.co/5awBLS1nQM" class="uri">https://t.co/5awBLS1nQM</a>
+</td>
+<td style="text-align:right;">
+0.9928797
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ahd1903
+</td>
+<td style="text-align:left;">
+This WESC standard is from Michael Rigby’s full dress #eResAU2019 presentation earlier today <a href="https://t.co/eWRkezlNNh" class="uri">https://t.co/eWRkezlNNh</a> - lots of new consumers and producers of energy, water data, this is trying to bring order to the chaos.
+</td>
+<td style="text-align:right;">
+0.9928797
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="topic-4" class="section level4 unnumbered">
+<h4>Topic 4</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+gamma
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+RCCUQ
+</td>
+<td style="text-align:left;">
+At #eResAU2019 today (Tues, 22 Oct), RCC Software Developer Zane van Iperen will discuss his work on embedded Nimrod at 4:10pm–4:30pm, &amp;amp; RCC Director <span class="citation">@davidaabramson</span> (below) will discuss CAMERA, RCC’s new framework to simplify digital instrument-based research, at 5:10pm–5:30pm. <a href="https://t.co/SZnuNIsJni" class="uri">https://t.co/SZnuNIsJni</a>
+</td>
+<td style="text-align:right;">
+0.9959163
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RCCUQ
+</td>
+<td style="text-align:left;">
+At #eResAU2019 today? Note these RCC talks: 12:05–12:50pm, <span class="citation">@zebrax0r</span> &amp;amp; <span class="citation">@DellTech</span>: #HPC Wiener for #imaging &amp;amp; #MachineLearning. 4:10–4:30pm, Zane van Iperen: embedded Nimrod. 5:10–5:30pm, <span class="citation">@davidaabramson</span>: CAMERA, a framework to simplify digital instrument-based research. <a href="https://t.co/0zvpHsb6th" class="uri">https://t.co/0zvpHsb6th</a>
+</td>
+<td style="text-align:right;">
+0.9954289
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NeSI_NZ
+</td>
+<td style="text-align:left;">
+.@ARDC_AU CEO <span class="citation">@RJMG</span> speaks to some current challenges around data… gaps in skilled workforce; working with sensitive data; community agreement around trusted data; access to non-research data. We need frameworks for sharing comms around these challenges more widely #eResAU2019 <a href="https://t.co/f61qLNH8KG" class="uri">https://t.co/f61qLNH8KG</a>
+</td>
+<td style="text-align:right;">
+0.9952396
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RCCUQ
+</td>
+<td style="text-align:left;">
+3 RCC-sponsored #UQ Graduate Digital Research Fellows - Aparna Gopal, Louise Martin-Chew &amp;amp; Dilrabo Tosheva - will present their projects as lightning talks at #eResAU2019 today (Wed, 23 Oct), 12-12:40pm. <a href="https://t.co/dEKacZMxqK" class="uri">https://t.co/dEKacZMxqK</a> <span class="citation">@dataronin</span>
+</td>
+<td style="text-align:right;">
+0.9948095
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AeRO_eResearch
+</td>
+<td style="text-align:left;">
+#eResAU2019 #diversity breakfast guest speaker <span class="citation">@women_in_hpc</span> Toni Collis highlighting practical aspects and activities to encourage #diversity and #inclusion across the #eResearch sector #DiversityDividend #GlobalOutputIncrease #MultiCultural #Team #Performance <a href="https://t.co/a7MUFNWwcj" class="uri">https://t.co/a7MUFNWwcj</a>
+</td>
+<td style="text-align:right;">
+0.9945639
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+qcifltd
+</td>
+<td style="text-align:left;">
+New QCIF staffer <span class="citation">@heidzOP</span> will present a talk at #eResAU2019 today (Tues 22 Oct), 4:10–4:30pm, about the impact of access to sensitive administrative data for research using <span class="citation">@Griffith_Uni</span>’s Social Analytics Lab (where she worked previously) as a case study. <a href="https://t.co/DHXJ0WfzuS" class="uri">https://t.co/DHXJ0WfzuS</a>
+</td>
+<td style="text-align:right;">
+0.9939958
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SianWoolcock1
+</td>
+<td style="text-align:left;">
+“How to we make it easier for researchers to share their data? Policy isn’t enough. Combination of capabilty/ opportunity/ motivation is required.” Slide/presenter : Dr Michelle Kahe #eResAU2019 #OA #OpenData <a href="https://t.co/g5eC8B6Uyj" class="uri">https://t.co/g5eC8B6Uyj</a>
+</td>
+<td style="text-align:right;">
+0.9939958
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AusBiocommons
+</td>
+<td style="text-align:left;">
+Today’s contribution to <span class="citation">@AeRO_eResearch</span> #eResAU2019 includes Training Manager Dr Christina Hall sharing our ‘Hybrid Training: a new scalable model for delivering dispersed bioinformatics training’ at 12.20pm #NCRISImpact
+</td>
+<td style="text-align:right;">
+0.9939958
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Scarperella
+</td>
+<td style="text-align:left;">
+#eResAU2019 How to run a cost-effective graduate researcher training service from Research Platform Services Uni of Melb. So many choices for tools…Demand for assistance to big for ticketing systems…. <a href="https://t.co/MUQ5TnAu2f" class="uri">https://t.co/MUQ5TnAu2f</a>
+</td>
+<td style="text-align:right;">
+0.9939958
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ausaccessfed
+</td>
+<td style="text-align:left;">
+AAF CEO Heath Marks and COO Princess Leia (aka Elleina Filippi) present a decade of learnings on enabling research access #eResAU2019 #maytheforcebewithyou #NCRISimpact <a href="https://t.co/flV23Ue8sI" class="uri">https://t.co/flV23Ue8sI</a>
+</td>
+<td style="text-align:right;">
+0.9936648
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="topic-5" class="section level4 unnumbered">
+<h4>Topic 5</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+gamma
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+TERN_Aus
+</td>
+<td style="text-align:left;">
+Morning #eResAU2019! Interested in data on the 🇦🇺 #environment? Or ☁️-based tools for data analysis? Data visualisation? Virtual desktops? Drop by the TERN booth &amp;amp; learn how our free data &amp;amp; services can help you. Or just say hi to this friendly bunch! 😃 #NCRISimpact #ESAus19 <a href="https://t.co/YzkgvZZbtD" class="uri">https://t.co/YzkgvZZbtD</a>
+</td>
+<td style="text-align:right;">
+0.9950338
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SianWoolcock1
+</td>
+<td style="text-align:left;">
+<p>According to Carmel Woods, her institutional challenges for introducing open and responsible data stewardship include overcoming a culture of ‘my data’ versus ‘our data’.</p>
+<p>Sound familiar anyone? 😊</p>
+#eResAU2019 #RDM #ResearchDataManagement Slide/presenter: Carmel Woods <a href="https://t.co/ueB3IqEnnv" class="uri">https://t.co/ueB3IqEnnv</a>
+</td>
+<td style="text-align:right;">
+0.9950338
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+leila2013m
+</td>
+<td style="text-align:left;">
+What the top data related skills are? Data conceptualisation, Data curation, prep &amp;amp;cleansing, data communications, data compliance: FAIR, de-identifying , data visualisation an interesting discussion at #eResAU2019 . <a href="https://t.co/sML4x0Zbum" class="uri">https://t.co/sML4x0Zbum</a>
+</td>
+<td style="text-align:right;">
+0.9945639
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+aurin_org_au
+</td>
+<td style="text-align:left;">
+Thank you <span class="citation">@stevenmce</span> Great to see the lengths <span class="citation">@ausdataarchive</span> are going to for researchers to gain access to valuable ABS data. We’re pleased to have historic census data available on the #AURINWorkbench &amp;amp; look forward to growing data availability in the coming years! #eResAU2019 <a href="https://t.co/LZgDl2HTSO" class="uri">https://t.co/LZgDl2HTSO</a>
+</td>
+<td style="text-align:right;">
+0.9945639
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sarasrking
+</td>
+<td style="text-align:left;">
+Visualise Your Thesis competition presentation this afternoon - a way to gain valuable skills not nec part of the trad HDR experience + polished public engagement tool = WIN WIN! #eResAU2019 <a href="https://t.co/tzRLKf1uyt" class="uri">https://t.co/tzRLKf1uyt</a>
+</td>
+<td style="text-align:right;">
+0.9939958
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SianWoolcock1
+</td>
+<td style="text-align:left;">
+<p>#UniSA on-prem data storage solution provides a cloud based experience without the cloud. Secure Data sharing with external colloburators also possible.</p>
+#eResAu2019 #ResearchDataStorage #ResearchDataManagement #NextCloud <a href="https://t.co/SPQH8atxde" class="uri">https://t.co/SPQH8atxde</a>
+</td>
+<td style="text-align:right;">
+0.9936648
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+leila2013m
+</td>
+<td style="text-align:left;">
+Prof Neil McNiel summarised how health system could move from data to decisions to not only diagnose and treat diseases but also to predict and prescriptive it. An impressive key note at #eResAu2019 <a href="https://t.co/YGEjvn0TgH" class="uri">https://t.co/YGEjvn0TgH</a>
+</td>
+<td style="text-align:right;">
+0.9936648
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SianWoolcock1
+</td>
+<td style="text-align:left;">
+<p>What can developers do to create #SustainableSoftware?</p>
+<p>Version control &amp;amp; documentation, use commonly used languages, frameworks, containerisation, #APIs, iterative development</p>
+Slide/Presenter: Heidi Perrett #eResAU2019 <a href="https://t.co/QGNDS29IrF" class="uri">https://t.co/QGNDS29IrF</a>
+</td>
+<td style="text-align:right;">
+0.9936648
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+loriendelaney
+</td>
+<td style="text-align:left;">
+The struggle to anticipate possible future uses of data when obtaining participant consent…recurring theme at today’s animated discussion on sensitive data led by Ingrid Mason <span class="citation">@1n9r1d</span> at #eResAU2019
+</td>
+<td style="text-align:right;">
+0.9932951
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SianWoolcock1
+</td>
+<td style="text-align:left;">
+<p>Top tip for webinars - have a separate person on chat - this is important for a genuine interactive experience.</p>
+<p>#eResAU2019 #UX</p>
+Slide/presenter Leonie Sherwin <span class="citation">@usqedu</span> <a href="https://t.co/5OIzDHbCF5" class="uri">https://t.co/5OIzDHbCF5</a>
+</td>
+<td style="text-align:right;">
+0.9928797
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="topic-6" class="section level4 unnumbered">
+<h4>Topic 6</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+gamma
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+TERN_Aus
+</td>
+<td style="text-align:left;">
+At #eResAU2019 this week? Don’t miss TERN’s Dr Siddeswara Guru’s Birds of a Feather session on national coordination in spatial info. Wed 23/10 15:00. Guru will then chair an exciting life sciences session at 16:10–17:30. See you there! <a href="https://t.co/tXtrdAbHqB" class="uri">https://t.co/tXtrdAbHqB</a> <span class="citation">@RCCUQ</span> #NCRIS <a href="https://t.co/L4XpQzXMqH" class="uri">https://t.co/L4XpQzXMqH</a>
+</td>
+<td style="text-align:right;">
+0.9950338
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DigiGav
+</td>
+<td style="text-align:left;">
+Hard to find the right moment in Jakub “Kuba” Moscicki’s keynote talk, but this one compares finding Higgs Boson events from CERN’s LHC data to finding the right needle in the right haystack when you are generating 25 million haystacks per second. #eresau2019 <a href="https://t.co/rtYnruaGp2" class="uri">https://t.co/rtYnruaGp2</a>
+</td>
+<td style="text-align:right;">
+0.9948095
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1n9r1d
+</td>
+<td style="text-align:left;">
+Apt <span class="citation">@britishlibrary</span> held symposium on digital scholarship occurring within research libraries “to discuss areas of potential cross-sector and interdisciplinary collaboration, and the routes and networks through which this might be achieved.” as we traversed workflows #eResAu2019 <a href="https://t.co/AG0frxvOW6" class="uri">https://t.co/AG0frxvOW6</a>
+</td>
+<td style="text-align:right;">
+0.9945639
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AARNet
+</td>
+<td style="text-align:left;">
+Head to the auditorium this morning at 10:10 to hear a lightning talk on key lessons learned exploring research library curation digitisation and data processing workflows using our #CloudStor and Jupyter service via <span class="citation">@1n9r1d</span> <a href="https://t.co/I9rigrWNNN" class="uri">https://t.co/I9rigrWNNN</a> #eResAu2019
+</td>
+<td style="text-align:right;">
+0.9945639
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NeSI_NZ
+</td>
+<td style="text-align:left;">
+Nick Jones: Is there an opportunity to think about how we connect across the Tasman to provide 1st class data workflows — sharing lessons learned &amp;amp; leveraging high quality base infrastructures and service layers #eResAU2019 <span class="citation">@globus</span> <a href="https://t.co/U0rJBrTdRw" class="uri">https://t.co/U0rJBrTdRw</a>
+</td>
+<td style="text-align:right;">
+0.9942940
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+unilibrary
+</td>
+<td style="text-align:left;">
+.@VetPracticeMag How can we better protect pets? <span class="citation">@FVASunimelb</span> #researcher + <span class="citation">@unimelb</span> #VYT2019 winner Carmen Glanville points to changing people → <a href="https://t.co/qv9VHT0xVK" class="uri">https://t.co/qv9VHT0xVK</a> Good luck to Carmen in international round of the <span class="citation">@VisualiseThesis</span> held at #eResAu2019 next week …
+</td>
+<td style="text-align:right;">
+0.9939958
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+DrIdoBar
+</td>
+<td style="text-align:left;">
+What does a couple of data geeks do with their 3mo baby for their wedding anniversary? Go to #eResAu2019 👩‍💻👨‍💻 I’ll be at the babysitter role today, so say hi if you see a red pram around (and a bold daddy with baby with a full head of hair).⁦<span class="citation">@heidzOP</span>⁩ <a href="https://t.co/WN6id9ET44" class="uri">https://t.co/WN6id9ET44</a>
+</td>
+<td style="text-align:right;">
+0.9939958
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+NeSI_NZ
+</td>
+<td style="text-align:left;">
+NeSI’s Research Communities Advisor, Nooriyah Lohani <span class="citation">@MysteryGenes</span>, sharing insights from consultations with NZ researcher community leaders to better understand their needs. Recap report available on <span class="citation">@figshare</span>: <a href="https://t.co/Q9y18PgoZh" class="uri">https://t.co/Q9y18PgoZh</a> #eResAU2019 <a href="https://t.co/0I2WdLutu7" class="uri">https://t.co/0I2WdLutu7</a>
+</td>
+<td style="text-align:right;">
+0.9939958
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+leila2013m
+</td>
+<td style="text-align:left;">
+Just shared Flinders OA week great programs planned by CRSL team in a OA advocacy workshop facilitating by <span class="citation">@GinnyBarbour</span> at #eResAu2019 I am quackers for OA. ping <span class="citation">@LizWalkleyHall</span> <span class="citation">@MaryFilsell</span> <span class="citation">@K1Howard</span> <span class="citation">@FlindersLib</span> <span class="citation">@ppandey007</span> <a href="https://t.co/5INhlopPJr" class="uri">https://t.co/5INhlopPJr</a>
+</td>
+<td style="text-align:right;">
+0.9936648
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AusBiocommons
+</td>
+<td style="text-align:left;">
+What to know more about the Australian BioCommons? Hear all about this new <span class="citation">@BioplatformsAus</span> initiative today 4.30pm <span class="citation">@AeRO_eResearch</span> #eResAU2019. Assoc Director Dr Jeff Christiansen: Aus BioCommons - an exemplar of international engagement in research infrastructure #NCRISImpact
+</td>
+<td style="text-align:right;">
+0.9936648
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div id="software" class="section level1">
+<h1><span class="header-section-number">9</span> Software</h1>
+<p>Software mentioned in Tweets with links to GitHub, BitBucket, Bioconductor or CRAN.</p>
+</div>
+<div id="session-info" class="section level1 unnumbered">
+<h1>Session info</h1>
+<pre><code>## R version 3.6.0 (2019-04-26)
+## Platform: x86_64-apple-darwin15.6.0 (64-bit)
+## Running under: macOS Mojave 10.14.6
+## 
+## Matrix products: default
+## BLAS:   /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRblas.0.dylib
+## LAPACK: /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRlapack.dylib
+## 
+## locale:
+## [1] en_AU.UTF-8/en_AU.UTF-8/en_AU.UTF-8/C/en_AU.UTF-8/en_AU.UTF-8
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+##  [1] fs_1.3.1           here_0.1           knitr_1.25        
+##  [4] magick_2.2         webshot_0.5.1      viridis_0.5.1     
+##  [7] viridisLite_0.3.0  wordcloud_2.6      RColorBrewer_1.1-2
+## [10] ggraph_2.0.0       ggrepel_0.8.1      ggplot2_3.2.1     
+## [13] topicmodels_0.2-8  tidytext_0.2.2     igraph_1.2.4.1    
+## [16] stringr_1.4.0      purrr_0.3.3        forcats_0.4.0     
+## [19] lubridate_1.7.4    tidyr_1.0.0        dplyr_0.8.3       
+## [22] rtweet_0.6.9      
+## 
+## loaded via a namespace (and not attached):
+##  [1] httr_1.4.1         tidygraph_1.1.2    jsonlite_1.6      
+##  [4] assertthat_0.2.1   askpass_1.1        highr_0.8         
+##  [7] stats4_3.6.0       yaml_2.2.0         progress_1.2.2    
+## [10] slam_0.1-45        pillar_1.4.2       backports_1.1.5   
+## [13] lattice_0.20-38    glue_1.3.1         digest_0.6.22     
+## [16] polyclip_1.10-0    colorspace_1.4-1   plyr_1.8.4        
+## [19] htmltools_0.4.0    Matrix_1.2-17      tm_0.7-6          
+## [22] pkgconfig_2.0.3    scales_1.0.0       processx_3.4.1    
+## [25] tweenr_1.0.1       ggforce_0.3.1      tibble_2.1.3      
+## [28] openssl_1.4.1      generics_0.0.2     farver_1.1.0      
+## [31] ellipsis_0.3.0     withr_2.1.2        lazyeval_0.2.2    
+## [34] cli_1.1.0          NLP_0.2-0          magrittr_1.5      
+## [37] crayon_1.3.4       ps_1.3.0           evaluate_0.14     
+## [40] tokenizers_0.2.1   janeaustenr_0.1.5  fansi_0.4.0       
+## [43] SnowballC_0.6.0    MASS_7.3-51.4      xml2_1.2.2        
+## [46] tools_3.6.0        prettyunits_1.0.2  hms_0.5.1         
+## [49] lifecycle_0.1.0    munsell_0.5.0      callr_3.3.2       
+## [52] compiler_3.6.0     rlang_0.4.0        grid_3.6.0        
+## [55] labeling_0.3       rmarkdown_1.16     gtable_0.3.0      
+## [58] curl_4.2           reshape2_1.4.3     graphlayouts_0.5.0
+## [61] R6_2.4.0           gridExtra_2.3      utf8_1.1.4        
+## [64] zeallot_0.1.0      rprojroot_1.3-2    modeltools_0.2-22 
+## [67] stringi_1.4.3      parallel_3.6.0     Rcpp_1.0.2        
+## [70] vctrs_0.2.0        tidyselect_0.2.5   xfun_0.10</code></pre>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
