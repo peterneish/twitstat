@@ -1,0 +1,2108 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>AIMOS2019</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 64px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h2 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h3 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h4 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h5 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h6 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Twitter stats</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="about.html">About</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">AIMOS2019</h1>
+<h3 class="subtitle">An analysis of #AIMOS2019</h3>
+<h4 class="date">2019-11-11 09:55:44</h4>
+
+</div>
+
+
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Parameter</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">hashtag</td>
+<td align="left">#AIMOS2019</td>
+</tr>
+<tr class="even">
+<td align="left">start_day</td>
+<td align="left">2019-11-07</td>
+</tr>
+<tr class="odd">
+<td align="left">end_day</td>
+<td align="left">2019-11-08</td>
+</tr>
+<tr class="even">
+<td align="left">timezone</td>
+<td align="left">Australia/Melbourne</td>
+</tr>
+<tr class="odd">
+<td align="left">theme</td>
+<td align="left">theme_light</td>
+</tr>
+<tr class="even">
+<td align="left">accent</td>
+<td align="left">dodgerblue</td>
+</tr>
+<tr class="odd">
+<td align="left">accent2</td>
+<td align="left">#8EC7FF</td>
+</tr>
+<tr class="even">
+<td align="left">kcore</td>
+<td align="left">2</td>
+</tr>
+<tr class="odd">
+<td align="left">topics_k</td>
+<td align="left">6</td>
+</tr>
+<tr class="even">
+<td align="left">bigram_filter</td>
+<td align="left">3</td>
+</tr>
+<tr class="odd">
+<td align="left">fixed</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="left">seed</td>
+<td align="left">1</td>
+</tr>
+</tbody>
+</table>
+<div id="introduction" class="section level1">
+<h1><span class="header-section-number">1</span> Introduction</h1>
+<p>An analysis of tweets from the #AIMOS2019 hashtag. A total of 1630 tweets from 410 users were collected using the <code>rtweet</code> R package.</p>
+</div>
+<div id="timeline" class="section level1">
+<h1><span class="header-section-number">2</span> Timeline</h1>
+<div id="tweets-by-day" class="section level2">
+<h2><span class="header-section-number">2.1</span> Tweets by day</h2>
+<p><img src="figures/AIMOS2019/tweets-by-day-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="tweets-by-day-and-time" class="section level2">
+<h2><span class="header-section-number">2.2</span> Tweets by day and time</h2>
+<p>Filtered for dates 2019-11-07 - 2019-11-08 in the Australia/Melbourne timezone.</p>
+<p><img src="figures/AIMOS2019/tweets-by-day-hour-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="users" class="section level1">
+<h1><span class="header-section-number">3</span> Users</h1>
+<div id="top-tweeters" class="section level2 tabset tabset-pills">
+<h2><span class="header-section-number">3.1</span> Top tweeters</h2>
+<div id="overall" class="section level3 unnumbered">
+<h3>Overall</h3>
+<p><img src="figures/AIMOS2019/tweets-top-users-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="original" class="section level3 unnumbered">
+<h3>Original</h3>
+<p><img src="figures/AIMOS2019/tweets-top-users-orig-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="retweets" class="section level3 unnumbered">
+<h3>Retweets</h3>
+<p><img src="figures/AIMOS2019/tweets-top-users-retweet-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="retweet-proportion" class="section level2">
+<h2><span class="header-section-number">3.2</span> Retweet proportion</h2>
+<p><img src="figures/AIMOS2019/tweets-retweet-prop-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="top-tweeters-timeline" class="section level2">
+<h2><span class="header-section-number">3.3</span> Top tweeters timeline</h2>
+<p><img src="figures/AIMOS2019/tweets-top-users-time-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="top-tweeters-by-day" class="section level2 tabset tabset-pills">
+<h2><span class="header-section-number">3.4</span> Top tweeters by day</h2>
+<div id="overall-1" class="section level3 unnumbered tabset tabset-fade">
+<h3>Overall</h3>
+<div id="day-1" class="section level4 unnumbered">
+<h4>Day 1</h4>
+<p><img src="figures/AIMOS2019/tweets-top-users-day1-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="day-2" class="section level4 unnumbered">
+<h4>Day 2</h4>
+<p><img src="figures/AIMOS2019/tweets-top-users-day2-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="original-1" class="section level3 unnumbered tabset tabset-fade">
+<h3>Original</h3>
+<div id="day-1-1" class="section level4 unnumbered">
+<h4>Day 1</h4>
+<p><img src="figures/AIMOS2019/tweets-top-users-orig-day1-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="day-2-1" class="section level4 unnumbered">
+<h4>Day 2</h4>
+<p><img src="figures/AIMOS2019/tweets-top-users-orig-day2-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="retweets-1" class="section level3 unnumbered tabset tabset-fade">
+<h3>Retweets</h3>
+<div id="day-1-2" class="section level4 unnumbered">
+<h4>Day 1</h4>
+<p><img src="figures/AIMOS2019/tweets-top-users-retweets-day1-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="day-2-2" class="section level4 unnumbered">
+<h4>Day 2</h4>
+<p><img src="figures/AIMOS2019/tweets-top-users-retweets-day2-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+</div>
+</div>
+<div id="sources" class="section level1">
+<h1><span class="header-section-number">4</span> Sources</h1>
+<p><img src="figures/AIMOS2019/tweets-top-sources-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="networks" class="section level1">
+<h1><span class="header-section-number">5</span> Networks</h1>
+<div id="replies" class="section level2">
+<h2><span class="header-section-number">5.1</span> Replies</h2>
+<p>The “replies network”, composed from users who reply directly to one another, coloured by PageRank.</p>
+<p><img src="figures/AIMOS2019/reply-network-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="mentions" class="section level2">
+<h2><span class="header-section-number">5.2</span> Mentions</h2>
+<p>The “mentions network”, where users mention other users in their tweets. Filtered for a k-core of 2. Node colour and size adjusted according to PageRank score.</p>
+<p><img src="figures/AIMOS2019/mentions-network-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="tweet-types" class="section level1">
+<h1><span class="header-section-number">6</span> Tweet types</h1>
+<div id="retweets-2" class="section level2 tabset tabset-pills">
+<h2><span class="header-section-number">6.1</span> Retweets</h2>
+<div id="proportion" class="section level3 unnumbered">
+<h3>Proportion</h3>
+<p><img src="figures/AIMOS2019/is-retweet-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="count" class="section level3 unnumbered">
+<h3>Count</h3>
+<p><img src="figures/AIMOS2019/retweet-count-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="top-10" class="section level3 unnumbered">
+<h3>Top 10</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+retweet_count
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+dannykay68
+</td>
+<td style="text-align:left;">
+ADVICE for ECRs: Attend lots of conferences Don’t collaborate with anyone you don’t like Do good slow science Collaborate with people different to you for balance Be genuine Don’t reject yourself, let them do it Teaching is fun and rewarding Remember why you started #aimos2019
+</td>
+<td style="text-align:right;">
+58
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Tom_Hardwicke
+</td>
+<td style="text-align:left;">
+New poster: “Transdisciplinary estimates for the prevalence of transparency and reproducibility related research practices” with <span class="citation">@JoshuaDWallach</span> <span class="citation">@cruwelli</span> &amp;amp; John Ioannidis. Download full poster: <a href="https://t.co/y0x3FvWenM" class="uri">https://t.co/y0x3FvWenM</a> Presented today at #AIMOS2019 <a href="https://t.co/azwdDK7uZ8" class="uri">https://t.co/azwdDK7uZ8</a>
+</td>
+<td style="text-align:right;">
+28
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ALeighMP
+</td>
+<td style="text-align:left;">
+Aussie expat researcher <span class="citation">@jamesheathers</span> runs the <span class="citation">@justsaysinmice</span> twitter account, whose sole purpose is to expose mice-based research that purports to apply to humans. ‘Twas a delight to meet him at <span class="citation">@AIMOS2019</span> today. #AIMOS2019 <a href="https://t.co/495LQN06J1" class="uri">https://t.co/495LQN06J1</a>
+</td>
+<td style="text-align:right;">
+22
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GinnyBarbour
+</td>
+<td style="text-align:left;">
+The issue of incentives at is coming up repeatedly at #AIMOS2019. Researchers, PIs, universities all have incentives that are driving them - and most incentives in place now currently don’t support reproducibility or open science
+</td>
+<td style="text-align:right;">
+20
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RachaelBrown42
+</td>
+<td style="text-align:left;">
+#AIMOS2019 I’ve had some requests for places to get started on philosophy so here is a book list… to start “Recipes for Science” by <span class="citation">@APotochnik</span> et al. <a href="https://t.co/IaCx7hftVl" class="uri">https://t.co/IaCx7hftVl</a>
+</td>
+<td style="text-align:right;">
+20
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+siminevazire
+</td>
+<td style="text-align:left;">
+“What killed alchemy was open science.” -Andrew Leigh What else will transparency kill? If a field resists the move towards transparency, is that because they’re not confident they won’t suffer the same fate as alchemy? #AIMOS2019
+</td>
+<td style="text-align:right;">
+19
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+siminevazire
+</td>
+<td style="text-align:left;">
+Very excited for this talk by <span class="citation">@RachaelBrown42</span><br />
+#AIMOS2019 <a href="https://t.co/wnBsr9yM3V" class="uri">https://t.co/wnBsr9yM3V</a>
+</td>
+<td style="text-align:right;">
+18
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+deborahapthorp
+</td>
+<td style="text-align:left;">
+“Transparency doesn’t guarantee credibility - it guarantees you’ll get the credibility you deserve.” - <span class="citation">@siminevazire</span> #AIMOS2019
+</td>
+<td style="text-align:right;">
+18
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+jayechats
+</td>
+<td style="text-align:left;">
+.@HannahSFraser on how to encourage change, applicable in so many contexts: Bring people along with you rather than taking a didactic approach #AIMOS2019 #digipres #DigitalPreservation #WDPD2019 <a href="https://t.co/yiCeFgsKsY" class="uri">https://t.co/yiCeFgsKsY</a>
+</td>
+<td style="text-align:right;">
+18
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+KhandisBlake
+</td>
+<td style="text-align:left;">
+“If you’re not willing to publish something that goes against your priors, you’re not in #science, your in #advocacy” - Hon Dr Andrew Leigh #AIMOS2019 <span class="citation">@AIMOS2019</span>
+</td>
+<td style="text-align:right;">
+17
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="most-retweeted" class="section level3 unnumbered">
+<h3>Most retweeted</h3>
+<p><img src="figures/AIMOS2019/most-retweeted-1.png" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="likes" class="section level2 tabset tabset-pills">
+<h2><span class="header-section-number">6.2</span> Likes</h2>
+<div id="proportion-1" class="section level3 unnumbered">
+<h3>Proportion</h3>
+<p><img src="figures/AIMOS2019/has-favorite-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="count-1" class="section level3 unnumbered">
+<h3>Count</h3>
+<p><img src="figures/AIMOS2019/favorite-count-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="top-10-1" class="section level3 unnumbered">
+<h3>Top 10</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+favorite_count
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+dannykay68
+</td>
+<td style="text-align:left;">
+ADVICE for ECRs: Attend lots of conferences Don’t collaborate with anyone you don’t like Do good slow science Collaborate with people different to you for balance Be genuine Don’t reject yourself, let them do it Teaching is fun and rewarding Remember why you started #aimos2019
+</td>
+<td style="text-align:right;">
+215
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+siminevazire
+</td>
+<td style="text-align:left;">
+As if starting a new society and putting on a smashingly successful conference (#AIMOS2019) weren’t enough reason for <span class="citation">@fidlerfm</span> to celebrate, and for us to celebrate her, she also just got promoted to Professor!!!! Congratulations Fiona!!! 🎉🎉🎉🍻🎂🤩🤩🤩
+</td>
+<td style="text-align:right;">
+179
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ALeighMP
+</td>
+<td style="text-align:left;">
+Aussie expat researcher <span class="citation">@jamesheathers</span> runs the <span class="citation">@justsaysinmice</span> twitter account, whose sole purpose is to expose mice-based research that purports to apply to humans. ‘Twas a delight to meet him at <span class="citation">@AIMOS2019</span> today. #AIMOS2019 <a href="https://t.co/495LQN06J1" class="uri">https://t.co/495LQN06J1</a>
+</td>
+<td style="text-align:right;">
+126
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HannahSFraser
+</td>
+<td style="text-align:left;">
+I am completely honoured to take up the mantle of president of AIMOS for 2020! I hope that, over the next year we can expand AIMOS, increasing it’s reach and making it more inclusive. I very much look forward to the year to come #AIMOS2019 #AIMOS2020
+</td>
+<td style="text-align:right;">
+83
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+KhandisBlake
+</td>
+<td style="text-align:left;">
+“If you’re not willing to publish something that goes against your priors, you’re not in #science, your in #advocacy” - Hon Dr Andrew Leigh #AIMOS2019 <span class="citation">@AIMOS2019</span>
+</td>
+<td style="text-align:right;">
+69
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Tom_Hardwicke
+</td>
+<td style="text-align:left;">
+New poster: “Transdisciplinary estimates for the prevalence of transparency and reproducibility related research practices” with <span class="citation">@JoshuaDWallach</span> <span class="citation">@cruwelli</span> &amp;amp; John Ioannidis. Download full poster: <a href="https://t.co/y0x3FvWenM" class="uri">https://t.co/y0x3FvWenM</a> Presented today at #AIMOS2019 <a href="https://t.co/azwdDK7uZ8" class="uri">https://t.co/azwdDK7uZ8</a>
+</td>
+<td style="text-align:right;">
+61
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+siminevazire
+</td>
+<td style="text-align:left;">
+Very excited for this talk by <span class="citation">@RachaelBrown42</span><br />
+#AIMOS2019 <a href="https://t.co/wnBsr9yM3V" class="uri">https://t.co/wnBsr9yM3V</a>
+</td>
+<td style="text-align:right;">
+59
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+deborahapthorp
+</td>
+<td style="text-align:left;">
+“Transparency doesn’t guarantee credibility - it guarantees you’ll get the credibility you deserve.” - <span class="citation">@siminevazire</span> #AIMOS2019
+</td>
+<td style="text-align:right;">
+57
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+siminevazire
+</td>
+<td style="text-align:left;">
+Matthew Page: When I hear “progress happens one funeral at a time, the young people will save the day” I’m not so sure because it’s easy to get used to the system you’re in. [My mom once asked me same thing: how do you know the ECRs won’t turn into the old guard?] #AIMOS2019
+</td>
+<td style="text-align:right;">
+55
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ceptional
+</td>
+<td style="text-align:left;">
+There is a direct correlation between impact factor and fraud. We should take from the rich labs churning out dubious Nature papers and give the money to labs of the young good people, the Robin Hood model -Glen Begley #AIMOS2019
+</td>
+<td style="text-align:right;">
+50
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="most-likes" class="section level3 unnumbered">
+<h3>Most likes</h3>
+<p><img src="figures/AIMOS2019/most-favorited-1.png" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="quotes" class="section level2 tabset tabset-pills">
+<h2><span class="header-section-number">6.3</span> Quotes</h2>
+<div id="proportion-2" class="section level3 unnumbered">
+<h3>Proportion</h3>
+<p><img src="figures/AIMOS2019/is-quote-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="count-2" class="section level3 unnumbered">
+<h3>Count</h3>
+<p><img src="figures/AIMOS2019/quotes-count-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="top-10-2" class="section level3 unnumbered">
+<h3>Top 10</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+quote_count
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+fallonmody
+</td>
+<td style="text-align:left;">
+#AIMOS2019 for those following. <a href="https://t.co/ikgI8LDAkM" class="uri">https://t.co/ikgI8LDAkM</a>
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fiona_Bradley
+</td>
+<td style="text-align:left;">
+So great to be a part of this new association and a flourishing movement. See you next year! <span class="citation">@AIMOS2019</span> #AIMOS2019 <a href="https://t.co/hOPTunfhIa" class="uri">https://t.co/hOPTunfhIa</a>
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dannykay68
+</td>
+<td style="text-align:left;">
+PROUD to be a small part of this fantastic event. Also hugely relieved there is a committed, informed and active group in Australia concerned with these issues. #AIMOS2019 <a href="https://t.co/cKlBqbwXhe" class="uri">https://t.co/cKlBqbwXhe</a>
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+lingtax
+</td>
+<td style="text-align:left;">
+<p>Day 2 of #AIMOS2019. Still here and eager to talk about how you can get help and be help for people adopting new research practices.</p>
+Also, come to the #ANZORN, <span class="citation">@ResPlat</span> &amp;amp; <span class="citation">@resdatflu</span> session at 2pm! #openResearch <a href="https://t.co/f9XSs5N5oc" class="uri">https://t.co/f9XSs5N5oc</a>
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+annaklas_
+</td>
+<td style="text-align:left;">
+I second this! #ANZORN are a grass roots group working hard to help researchers at all stages of this transition. #AIMOS2019 <a href="https://t.co/4b9YWiisvq" class="uri">https://t.co/4b9YWiisvq</a>
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+annaklas_
+</td>
+<td style="text-align:left;">
+So pleased that <span class="citation">@AIMOS2019</span> has done this. This really should be the standard for conferences. This can reduce car/air travel and allow people who have competing demands the opportunity to still participate. #AIMOS2019 <a href="https://t.co/tmHQBQBiCH" class="uri">https://t.co/tmHQBQBiCH</a>
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dannykay68
+</td>
+<td style="text-align:left;">
+WATCH (you know you want to)…#AIMOS2019 <a href="https://t.co/qJO03kSAFz" class="uri">https://t.co/qJO03kSAFz</a>
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JenRichmondPhD
+</td>
+<td style="text-align:left;">
+I didn’t make it to many sessions at #aimos2019 but this talk from <span class="citation">@HannahSFraser</span> was my favourite. I don’t think the self appointed police will convince people to change by pointing the finger at those they deem to be behaving badly. Shame makes people hide/double down. 1/2 <a href="https://t.co/eZA8uDyDIJ" class="uri">https://t.co/eZA8uDyDIJ</a>
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+annaklas_
+</td>
+<td style="text-align:left;">
+What a wonderful slide to end on <span class="citation">@HannahSFraser</span> I think focusing on the culture and societal aspects of open science and credibility is a much more productive space to work from. #AIMOS2019 #openscience <a href="https://t.co/Y4kkUGZifE" class="uri">https://t.co/Y4kkUGZifE</a>
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+hertzpodcast
+</td>
+<td style="text-align:left;">
+The #AIMOS2019 meeting has just kicked off, check out our recent episode with <span class="citation">@fidlerfm</span> to hear what it’s all about <a href="https://t.co/HCSNv23Prr" class="uri">https://t.co/HCSNv23Prr</a>
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="most-quoted" class="section level3 unnumbered">
+<h3>Most quoted</h3>
+<p><img src="figures/AIMOS2019/most-quoted-1.png" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+</div>
+<div id="media" class="section level1 tabset tabset-pills">
+<h1><span class="header-section-number">7</span> Media</h1>
+<div id="proportion-3" class="section level2 unnumbered">
+<h2>Proportion</h2>
+<p><img src="figures/AIMOS2019/has-media-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="top-10-3" class="section level2 unnumbered">
+<h2>Top 10</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+favorite_count
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+ALeighMP
+</td>
+<td style="text-align:left;">
+Aussie expat researcher <span class="citation">@jamesheathers</span> runs the <span class="citation">@justsaysinmice</span> twitter account, whose sole purpose is to expose mice-based research that purports to apply to humans. ‘Twas a delight to meet him at <span class="citation">@AIMOS2019</span> today. #AIMOS2019 <a href="https://t.co/495LQN06J1" class="uri">https://t.co/495LQN06J1</a>
+</td>
+<td style="text-align:right;">
+126
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Tom_Hardwicke
+</td>
+<td style="text-align:left;">
+New poster: “Transdisciplinary estimates for the prevalence of transparency and reproducibility related research practices” with <span class="citation">@JoshuaDWallach</span> <span class="citation">@cruwelli</span> &amp;amp; John Ioannidis. Download full poster: <a href="https://t.co/y0x3FvWenM" class="uri">https://t.co/y0x3FvWenM</a> Presented today at #AIMOS2019 <a href="https://t.co/azwdDK7uZ8" class="uri">https://t.co/azwdDK7uZ8</a>
+</td>
+<td style="text-align:right;">
+61
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+siminevazire
+</td>
+<td style="text-align:left;">
+Very excited for this talk by <span class="citation">@RachaelBrown42</span><br />
+#AIMOS2019 <a href="https://t.co/wnBsr9yM3V" class="uri">https://t.co/wnBsr9yM3V</a>
+</td>
+<td style="text-align:right;">
+59
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+annaklas_
+</td>
+<td style="text-align:left;">
+At #AIMOS2019 today, discussing #openscience &amp;amp; quality control. We start with a keynote by <span class="citation">@siminevazire</span> who ended with this image. We’re obsessed having incredible findings becoz we don’t want to be poor, bad, or ordinary. But really we should want to be credible &amp;amp; reasonable. <a href="https://t.co/vHLeo51U6B" class="uri">https://t.co/vHLeo51U6B</a>
+</td>
+<td style="text-align:right;">
+44
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+jayechats
+</td>
+<td style="text-align:left;">
+.@HannahSFraser on how to encourage change, applicable in so many contexts: Bring people along with you rather than taking a didactic approach #AIMOS2019 #digipres #DigitalPreservation #WDPD2019 <a href="https://t.co/yiCeFgsKsY" class="uri">https://t.co/yiCeFgsKsY</a>
+</td>
+<td style="text-align:right;">
+44
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+socialneuro
+</td>
+<td style="text-align:left;">
+Look at all the open science/meta science fans in Melbourne! #AIMOS2019 <a href="https://t.co/WH68Nu4IP3" class="uri">https://t.co/WH68Nu4IP3</a>
+</td>
+<td style="text-align:right;">
+42
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fidlerfm
+</td>
+<td style="text-align:left;">
+Just my regular tram but today it will take me to #AIMOS2019 <a href="https://t.co/PgWT4LKtBY" class="uri">https://t.co/PgWT4LKtBY</a>
+</td>
+<td style="text-align:right;">
+37
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fidlerfm
+</td>
+<td style="text-align:left;">
+Have effect sizes in the psych literature declined over time? <span class="citation">@FSingletonThorn</span>’s slide has the answer #AIMOS2019 <a href="https://t.co/C8wb3pqBNb" class="uri">https://t.co/C8wb3pqBNb</a>
+</td>
+<td style="text-align:right;">
+36
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+lingtax
+</td>
+<td style="text-align:left;">
+Because this hasn’t been said enough. Thank you to the foundation president of #AIMOS2019 <span class="citation">@fidlerfm</span> for her hard work in shepherding this society to a great inaugural conference. We would not be here without you <a href="https://t.co/qmsq3r4Y5v" class="uri">https://t.co/qmsq3r4Y5v</a>
+</td>
+<td style="text-align:right;">
+36
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+lingtax
+</td>
+<td style="text-align:left;">
+Keynote by <span class="citation">@siminevazire</span>: Norms of good science should include transparency, inclusion and skepticism not dogmatism and elitism #openScience #AIMOS2019 <span class="citation">@AIMOS2019</span> <a href="https://t.co/5qfSq4clZU" class="uri">https://t.co/5qfSq4clZU</a>
+</td>
+<td style="text-align:right;">
+34
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="section" class="section level1 unnumbered toc-ignore">
+<h1></h1>
+<div id="most-liked-image" class="section level2">
+<h2><span class="header-section-number">7.1</span> Most liked image</h2>
+<p><img src="http://pbs.twimg.com/media/EIwral2UYAEN-vK.jpg" /></p>
+</div>
+</div>
+<div id="tweet-text" class="section level1">
+<h1><span class="header-section-number">8</span> Tweet text</h1>
+<div id="word-cloud" class="section level2">
+<h2><span class="header-section-number">8.1</span> Word cloud</h2>
+<p>The top 100 words used 3 or more times.</p>
+<p><img src="figures/AIMOS2019/count-words-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="bigram-graph" class="section level2">
+<h2><span class="header-section-number">8.2</span> Bigram graph</h2>
+<p>Words that were tweeted next to each other at least 3 times.</p>
+<p><img src="figures/AIMOS2019/bigram-graph-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="topic-modelling" class="section level2">
+<h2><span class="header-section-number">8.3</span> Topic modelling</h2>
+<p>Top 10 words associated with 6 topics identified by LDA.</p>
+<p><img src="figures/AIMOS2019/topics-words-1.png" width="960" style="display: block; margin: auto;" /></p>
+<div id="representative-tweets" class="section level3 tabset tabset-fade">
+<h3><span class="header-section-number">8.3.1</span> Representative tweets</h3>
+<p>Most representative tweets for each topic</p>
+<div id="topic-1" class="section level4 unnumbered">
+<h4>Topic 1</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+gamma
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+siminevazire
+</td>
+<td style="text-align:left;">
+Q: What are the unique challenges for ECRs in Australia? Matthew Page: overseas conferences. 3 AM mtgs. <span class="citation">@ParkvilleGeek</span>: funding <span class="citation">@hayleyjach</span>: 3 yr PhD. overseas conferences. <span class="citation">@drjbeaudry</span>: isolation, in part bc no coursework. Start a <a href="mailto:club/@ReproducibiliT" class="email">club/@ReproducibiliT</a> chapter #AIMOS2019
+</td>
+<td style="text-align:right;">
+0.9950436
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+projectFOK
+</td>
+<td style="text-align:left;">
+#AIMOS2019 panel discussion on challenges facing ECRs. <span class="citation">@drjbeaudry</span>: ECRs could band together and approach universities to change policies. Yes! Collective action is key, ECRs are the bulk of academia, we can protect each other if we organise effectively. <span class="citation">@projectFOK</span> can help.
+</td>
+<td style="text-align:right;">
+0.9947973
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+siminevazire
+</td>
+<td style="text-align:left;">
+Matthew Page: When I hear “progress happens one funeral at a time, the young people will save the day” I’m not so sure because it’s easy to get used to the system you’re in. [My mom once asked me same thing: how do you know the ECRs won’t turn into the old guard?] #AIMOS2019
+</td>
+<td style="text-align:right;">
+0.9942232
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+tariqeden
+</td>
+<td style="text-align:left;">
+For those at #AIMOS2019 interested in collaborating with scholars from philosophy (and history and social studies) of the sciences, consider attending the session on ‘Developing Resources in Contemporary Philosophy of Scientific Practices for Scientists’ at 3.30pm. <a href="https://t.co/48pdEMCJ8C" class="uri">https://t.co/48pdEMCJ8C</a>
+</td>
+<td style="text-align:right;">
+0.9942232
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+emilyandthelime
+</td>
+<td style="text-align:left;">
+“If bad science is happening in your department you can go to your Research Integrity Office.” While I recognise the value of the message, the experience of people like <span class="citation">@abbynissenbaum</span> make me worried that this is an undue and unfair burden on some ECRs #AIMOS2019
+</td>
+<td style="text-align:right;">
+0.9938859
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+annaklas_
+</td>
+<td style="text-align:left;">
+At #AIMOS2019 today, discussing #openscience &amp;amp; quality control. We start with a keynote by <span class="citation">@siminevazire</span> who ended with this image. We’re obsessed having incredible findings becoz we don’t want to be poor, bad, or ordinary. But really we should want to be credible &amp;amp; reasonable. <a href="https://t.co/vHLeo51U6B" class="uri">https://t.co/vHLeo51U6B</a>
+</td>
+<td style="text-align:right;">
+0.9935067
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RajivKoiri5
+</td>
+<td style="text-align:left;">
+<p>#CatWest #AIMOS2019 #FRAAUS #AAI7 You can read more ideas on Commercial Bird Control Sydney #OaksDay #WonhoWeGotYourBack #AEWDynamite #WWENXT #Best_Leader_Hong_Day</p>
+<a href="https://t.co/MMg07FfurP" class="uri">https://t.co/MMg07FfurP</a> <a href="https://t.co/UKS8NCyemJ" class="uri">https://t.co/UKS8NCyemJ</a>
+</td>
+<td style="text-align:right;">
+0.9935067
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RajivKoiri5
+</td>
+<td style="text-align:left;">
+<p>#CatWest #AIMOS2019 #FRAAUS #AAI7 Click Here to view some of our Bird Control Sydney Option #OaksDay #WonhoWeGotYourBack #AEWDynamite #WWENXT #Best_Leader_Hong_Day</p>
+<a href="https://t.co/Cd85ARi4lz" class="uri">https://t.co/Cd85ARi4lz</a> <a href="https://t.co/n2cVUFqEaW" class="uri">https://t.co/n2cVUFqEaW</a>
+</td>
+<td style="text-align:right;">
+0.9935067
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RajivKoiri5
+</td>
+<td style="text-align:left;">
+<p>Visit Our Website #OaksDay #WonhoWeGotYourBack #AEWDynamite #WWENXT #Best_Leader_Hong_Day For some of our Bird Control Sydney Option #CatWest #AIMOS2019 #FRAAUS #AAI7</p>
+<a href="https://t.co/6L3x0ju7cz" class="uri">https://t.co/6L3x0ju7cz</a> <a href="https://t.co/M8NYPjCvOa" class="uri">https://t.co/M8NYPjCvOa</a>
+</td>
+<td style="text-align:right;">
+0.9935067
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+siminevazire
+</td>
+<td style="text-align:left;">
+Kristian Camilleri on the turn to practice in philosophy, history, and social studies of science: We now study how science is actually practiced, not just the ideal of how science should be, and not just what scientists say they do. #AIMOS2019 <a href="https://t.co/fgwHBZiUFd" class="uri">https://t.co/fgwHBZiUFd</a>
+</td>
+<td style="text-align:right;">
+0.9930774
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ceptional
+</td>
+<td style="text-align:left;">
+Although they are endorsed by scientists in the practice of science “Merton’s norms do not exist in any pervasive form” Hess 1997 p.57 , this is the consensus of sociologists of science - Kristian Camilleri #AIMOS2019
+</td>
+<td style="text-align:right;">
+0.9930774
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ceptional
+</td>
+<td style="text-align:left;">
+<p>Seriously excited for this morning’s presentations at #AIMOS2019.</p>
+Decomposing the sources of physiological arousal is always fraught, but I’m confident my anxiety about the penultimate talk is responsible for only a small part of this excitement ;) <a href="https://t.co/yrgfOObL38" class="uri">https://t.co/yrgfOObL38</a>
+</td>
+<td style="text-align:right;">
+0.9930774
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="topic-2" class="section level4 unnumbered">
+<h4>Topic 2</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+gamma
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+siminevazire
+</td>
+<td style="text-align:left;">
+Glenn Begley: PIs and institutions are the biggest problem when it comes to scientific integrity. It’s not fair to ask students and post docs to hold their PIs’ feet to the fire, but what ECRs can do is choose their lab carefully. #AIMOS2019
+</td>
+<td style="text-align:right;">
+0.9947973
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dannykay68
+</td>
+<td style="text-align:left;">
+WORRYING: Citation and usage data and citation patterns when Google Scholar became an adopted technology- Citation distributions becoming more concentrated &amp;amp; less diversified (we are reading &amp;lt;literature when we have access to everything) #AIMOS2019 <span class="citation">@jevinwest</span>
+</td>
+<td style="text-align:right;">
+0.9945253
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ceptional
+</td>
+<td style="text-align:left;">
+There is a direct correlation between impact factor and fraud. We should take from the rich labs churning out dubious Nature papers and give the money to labs of the young good people, the Robin Hood model -Glen Begley #AIMOS2019
+</td>
+<td style="text-align:right;">
+0.9945253
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+hildabast
+</td>
+<td style="text-align:left;">
+Contemporary philosophy of science - “we’re not necessarily interested in influencing science”, but issues like, what is morally acceptable should be a joint interest with meta-science. Also can bring logic, argumentation &amp;amp;c knowledge/skills/analysis <span class="citation">@rachaelbrown42</span> #aimos2019 <a href="https://t.co/ULv8lMBu99" class="uri">https://t.co/ULv8lMBu99</a>
+</td>
+<td style="text-align:right;">
+0.9945253
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+siminevazire
+</td>
+<td style="text-align:left;">
+I’ve actually only had great experiences talking with/hearing from philosophers re replicability/reform. Especially Anna Alexandrova, Felipe Romero, Edouard Machery, <span class="citation">@lastpositivist</span>, <span class="citation">@RemcoHeesen</span>, <span class="citation">@KevinZollman</span> and of course <span class="citation">@fidlerfm</span> (and I’m sure more I’m forgetting) #AIMOS2019 <a href="https://t.co/UgD5K8sEW3" class="uri">https://t.co/UgD5K8sEW3</a>
+</td>
+<td style="text-align:right;">
+0.9942232
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+siminevazire
+</td>
+<td style="text-align:left;">
+Contemporary phil of science looks very different than what most people think (not just Popper and old white guys in armchairs). Brown will go into some examples of what phil of science studies. But first, NOT: sociology of science, and usually not influencing science. #AIMOS2019
+</td>
+<td style="text-align:right;">
+0.9938859
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+siminevazire
+</td>
+<td style="text-align:left;">
+<p>In <span class="citation">@danielghamilton</span>’s survey of journal editors, 40% said they’d remove reviewers’ signatures without reviewer’s permission.</p>
+<p>Don’t do this.</p>
+<p>Best: leave signature in. If not: at least get reviewer permission to remove signature.</p>
+#AIMOS2019
+</td>
+<td style="text-align:right;">
+0.9938859
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+siminevazire
+</td>
+<td style="text-align:left;">
+It seems like philosophers of science should be interested in metascience &amp;amp; replicability. They are but it’s a new-ish &amp;amp; small area. Phil moves slowly. Have to be expert in many things, takes a long time. Phil will be slow bc will want to catch up on all literature. #AIMOS2019
+</td>
+<td style="text-align:right;">
+0.9938859
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dannykay68
+</td>
+<td style="text-align:left;">
+FLAW in the process of science is “everybody wants to build and nobody wants to do maintenance” (Kurt Vonnegut) <span class="citation">@siminevazire</span> #AIMOS2019 True in publishing actually - everybody wants to publish but people don’t want to read. We rarely discuss readers in the big OA discussions
+</td>
+<td style="text-align:right;">
+0.9938859
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+elisereports
+</td>
+<td style="text-align:left;">
+I know #openscience and #researchintegrity is sexy &amp;amp; there’s been a lot of p-hacking chat but I was not expecting a surprise porn takeover for the Interdisciplinary Meta-research &amp;amp; Open Science conference hashtag #AIMOS2019 😂 <a href="https://t.co/nrCc5KKZHZ" class="uri">https://t.co/nrCc5KKZHZ</a>
+</td>
+<td style="text-align:right;">
+0.9938859
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="topic-3" class="section level4 unnumbered">
+<h4>Topic 3</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+gamma
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+dannykay68
+</td>
+<td style="text-align:left;">
+QUESTION: Do journals still matter as credential markers? <span class="citation">@jevinwest</span> Compare the life of an article between its time in a preprint &amp;amp; in a journal (papers in arXiv do get cited directly) But citation count goes up substantially with publication. So journals do matter #AIMOS2019
+</td>
+<td style="text-align:right;">
+0.9952676
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dannykay68
+</td>
+<td style="text-align:left;">
+CONSEQUENCES needed to punish bad behaviour in science say panel at #AIMOS2019 but the current system where papers bestow ‘esteem’ means there is no actual responsibility. Take Wakefield. The only consequence was he got struck off the medical register in UK. Kids died.
+</td>
+<td style="text-align:right;">
+0.9952676
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+YungEnChee1
+</td>
+<td style="text-align:left;">
+#AIMOS2019 was one of the most stimulating &amp;amp; enjoyable confererences I’ve ever attended. HUGE thanks to the <span class="citation">@AIMOS2019</span> org team for a fabulously engaging program of talks, panels, posters &amp;amp; wkshps &amp;amp; for creating such a welcoming, collegiate atmosphere fuelled by fine catering! 🙏
+</td>
+<td style="text-align:right;">
+0.9950436
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dannykay68
+</td>
+<td style="text-align:left;">
+LACK of engagement from psychology societies in NZ and Australia with the open science agenda through promotion of it, discussion lists or time talking about it at conferences - Eric Vanman #AIMOS2019. Don’t beat yourselves up. Societies in general are woeful in this space
+</td>
+<td style="text-align:right;">
+0.9947973
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dannykay68
+</td>
+<td style="text-align:left;">
+ECLIPSED: At Uni of Sydney in 2017, the fees from Chinese students totalled $500 million dollars or one fifth of its total annual revenue. <a href="https://t.co/xNikMq99Sg" class="uri">https://t.co/xNikMq99Sg</a> The total funding from ARC &amp;amp; NHMRC in same period is only $1,700 million #AIMOS2019
+</td>
+<td style="text-align:right;">
+0.9947973
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+siminevazire
+</td>
+<td style="text-align:left;">
+<span class="citation">@TheReplicateNet</span> (Bob Reed) starts with a quote by Hamermesh: “Economists treat replication the way teenagers treat chastity - as an ideal to be professed but not to be practised” Replication is not very common in econ (still &amp;lt; 30 per year) #AIMOS2019 <a href="https://t.co/lLMi9WsA7U" class="uri">https://t.co/lLMi9WsA7U</a>
+</td>
+<td style="text-align:right;">
+0.9945253
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dannykay68
+</td>
+<td style="text-align:left;">
+SUMMARY - narrowing of collective view, search engines could be contributing, journals matter but highly cited preprints less likely to be published in journals (and something else I didn’t catch before slide changed) <span class="citation">@jevinwest</span> #AIMOS2019
+</td>
+<td style="text-align:right;">
+0.9942232
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dannykay68
+</td>
+<td style="text-align:left;">
+SELECTION - <span class="citation">@AleighMP</span> uses this study to help reduce pain in removal of bandaids on his kids <a href="https://t.co/c9JijkdVER" class="uri">https://t.co/c9JijkdVER</a> I assume he doesn’t also use this one “Swearing as a Response to Pain—Effect of Daily Swearing Frequency” <a href="https://t.co/HsDXU9gX6d" class="uri">https://t.co/HsDXU9gX6d</a> #AIMOS2019
+</td>
+<td style="text-align:right;">
+0.9938859
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+volz_le
+</td>
+<td style="text-align:left;">
+<p>And tying that into a greater point - the Australian Research Integrity Committee began as a “tooth-less tiger” &amp;amp; their power was even reduced with an overhaul of their framework</p>
+They can only investigate the process of research, not evaluate the whole picture #AIMOS2019 <a href="https://t.co/5EgHA5RuS1" class="uri">https://t.co/5EgHA5RuS1</a>
+</td>
+<td style="text-align:right;">
+0.9938859
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+r_vickersjones
+</td>
+<td style="text-align:left;">
+<p>A fantastic session led by <span class="citation">@HannahSFraser</span> on improving #diversity and #inclusion at <span class="citation">@AIMOS2019</span>. Lots of great and practical ideas that I’m really looking forward to seeing implemented! See our ideas (&amp;amp; add your own) here: <a href="https://t.co/3kbBDVUV4e" class="uri">https://t.co/3kbBDVUV4e</a></p>
+#openscience #anzorn #AIMOS2019 <a href="https://t.co/R6hyWJ768J" class="uri">https://t.co/R6hyWJ768J</a>
+</td>
+<td style="text-align:right;">
+0.9935067
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="topic-4" class="section level4 unnumbered">
+<h4>Topic 4</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+gamma
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+dannykay68
+</td>
+<td style="text-align:left;">
+PARTICIPATE in the survey <a href="https://t.co/1Br34WwKTN" class="uri">https://t.co/1Br34WwKTN</a> that Eric Vanman is running to understand attitudes and practices in open science, school and university attitudes to it #AIMOS2019 UNSW and UQ leading in responses, no responses at all from Monash or ANU
+</td>
+<td style="text-align:right;">
+0.9947973
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+elisereports
+</td>
+<td style="text-align:left;">
+Hey research friends! I’m super thrilled to be at the <span class="citation">@AIMOS2019</span> conference in Melbourne today! Don’t be scared. Come say hi to a friendly investigative journalist (pink glasses and lugging around a suitcase) to chat research integrity 🤓 #AIMOS2019 <span class="citation">@fidlerfm</span>
+</td>
+<td style="text-align:right;">
+0.9947973
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rmwillen
+</td>
+<td style="text-align:left;">
+<span class="citation">@r_vickersjones</span> <span class="citation">@deborahapthorp</span> <span class="citation">@HannahSFraser</span> <span class="citation">@AIMOS2019</span> <span class="citation">@improvingpsych</span> Although my main reason for not attending #AIMOS2019 was passport issues, it did matter that I’m experiencing issues during conferences with my excessive sleepiness, which is part of a progressive disorder. I simply can’t attend conferences as I used to bc no place to sleep.
+</td>
+<td style="text-align:right;">
+0.9945253
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dannykay68
+</td>
+<td style="text-align:left;">
+<span class="citation">@Fiona_Bradley</span> This was the argument of Thomas Kuhn in the Structure of Scientific Revolutions - that new theories struggle until pretty much people who are the ‘leads’ of the existing dominant theory die. He introduced the term ‘paradigm shift’ #AIMOS2019
+</td>
+<td style="text-align:right;">
+0.9945253
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dannykay68
+</td>
+<td style="text-align:left;">
+NEEDED: to support OS - “An interconnected equitable global scholarly ecosystem of well curated interoperable trusted research articles, data and software supported by a diversity of open publishing models” says <span class="citation">@GinnyBarbour</span> #aimos2019
+</td>
+<td style="text-align:right;">
+0.9942232
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GinnyBarbour
+</td>
+<td style="text-align:left;">
+#AIMOS2019 Panel asked if there are particular issues in Australia that affect their work - and the thorny issue of isolation and distance comes up. 2am conference calls are a pretty awful but seemingly inevitable requirement here if you want to collaborate internationally
+</td>
+<td style="text-align:right;">
+0.9942232
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+siminevazire
+</td>
+<td style="text-align:left;">
+<span class="citation">@cruwelli</span>: “be true to yourself” sounds good, but how? <span class="citation">@cglennbegley</span>: don’t do work you think is crap, don’t cite work you think is crap, don’t vote to promote or hire people whose work is crap. (Paraphrase) <span class="citation">@cruwelli</span>: won’t you get selected out? #AIMOS2019
+</td>
+<td style="text-align:right;">
+0.9938859
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dannykay68
+</td>
+<td style="text-align:left;">
+USEFUL: Resume for Researchers from the <span class="citation">@royalsociety</span> <a href="https://t.co/kVUk0PMvru" class="uri">https://t.co/kVUk0PMvru</a> a great step in working to break the narrow focus of current evaluation of academics which drives poor behaviour and is a major impediment for open access #AIMOS2019
+</td>
+<td style="text-align:right;">
+0.9938859
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dannykay68
+</td>
+<td style="text-align:left;">
+THERE IT IS - the first mention of the need to change culture in science to value open behaviours at #AIMOS2019 It is the single biggest block we have. Particularly bad in Australia as the chase for Uni rankings (to get O/S student income) is perverting behaviour
+</td>
+<td style="text-align:right;">
+0.9938859
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Tom_Hardwicke
+</td>
+<td style="text-align:left;">
+New poster: “Transdisciplinary estimates for the prevalence of transparency and reproducibility related research practices” with <span class="citation">@JoshuaDWallach</span> <span class="citation">@cruwelli</span> &amp;amp; John Ioannidis. Download full poster: <a href="https://t.co/y0x3FvWenM" class="uri">https://t.co/y0x3FvWenM</a> Presented today at #AIMOS2019 <a href="https://t.co/azwdDK7uZ8" class="uri">https://t.co/azwdDK7uZ8</a>
+</td>
+<td style="text-align:right;">
+0.9935067
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="topic-5" class="section level4 unnumbered">
+<h4>Topic 5</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+gamma
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+ceptional
+</td>
+<td style="text-align:left;">
+Thomas Shafee #AIMOS2019 tells us about the amazing array of free open access resources such as Wikiversity, wikipedians resident at uni libraries adding info to Wikipedia, journals writing review articles expressly to be posted to Wikipedia, and
+</td>
+<td style="text-align:right;">
+0.9954722
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ALeighMP
+</td>
+<td style="text-align:left;">
+Aussie expat researcher <span class="citation">@jamesheathers</span> runs the <span class="citation">@justsaysinmice</span> twitter account, whose sole purpose is to expose mice-based research that purports to apply to humans. ‘Twas a delight to meet him at <span class="citation">@AIMOS2019</span> today. #AIMOS2019 <a href="https://t.co/495LQN06J1" class="uri">https://t.co/495LQN06J1</a>
+</td>
+<td style="text-align:right;">
+0.9947973
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+smwindecker
+</td>
+<td style="text-align:left;">
+<p>👋 Hey #AIMOS2019, thinking about how to implement #openscience principles for #reproducibility in your (#rstats) code?</p>
+Come to room 456 this arvo to get a full live coding demo of setting up a workflow, version control, sharing your code and data, and other treats 🤓
+</td>
+<td style="text-align:right;">
+0.9945253
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BioCurate
+</td>
+<td style="text-align:left;">
+REMINDER: BioCurate CEO Dr <span class="citation">@cglennbegley</span> will be speaking on the Open Forum Panel Q&amp;amp;A at #AIMOS2019 tomorrow. Follow <span class="citation">@AIMOS2019</span> to join the conversation discussing the challenges facing students and early career researchers. <a href="https://t.co/Ians1YjaEP" class="uri">https://t.co/Ians1YjaEP</a>
+</td>
+<td style="text-align:right;">
+0.9942232
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dannykay68
+</td>
+<td style="text-align:left;">
+ADDITIONAL issue to the eprints not being considered published (so retractions don’t apply) <span class="citation">@hildabast</span> is just how dreadful the date issue is overall with publishers. Read: “It’s hard getting a date (of publication)” <a href="https://t.co/IvNxdlpIzN" class="uri">https://t.co/IvNxdlpIzN</a> #AIMOS2019
+</td>
+<td style="text-align:right;">
+0.9938859
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ceptional
+</td>
+<td style="text-align:left;">
+like CRediT (<a href="https://t.co/tz8Fs7DkpH" class="uri">https://t.co/tz8Fs7DkpH</a>) which indicates who did what in the research reported in scientific articles at <span class="citation">@PLOS</span> journals and at many e.g. Elsevier journals, but for a much broader set of activities. #AIMOS2019 Both really important for meta-research!
+</td>
+<td style="text-align:right;">
+0.9935067
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+jayechats
+</td>
+<td style="text-align:left;">
+On this World Digital Preservation Day it’s exceptionally fitting that I’m spending it at #AIMOS2019 - the Interdisciplinary Meta-research &amp;amp; Open Science conference <a href="https://t.co/meYxAPsGlE" class="uri">https://t.co/meYxAPsGlE</a> <span class="citation">@unimelb</span> #WDPD2019 <a href="https://t.co/hTIEAuTE0I" class="uri">https://t.co/hTIEAuTE0I</a>
+</td>
+<td style="text-align:right;">
+0.9935067
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JenRichmondPhD
+</td>
+<td style="text-align:left;">
+people who know git: if it all goes terribly wrong you can burn it to the ground and start again. Because it’s version control… Watching <span class="citation">@cantabile</span> do this to our repo over lunch is strangely liberating #AIMOS2019 <a href="https://t.co/vWSGf7xEyh" class="uri">https://t.co/vWSGf7xEyh</a>
+</td>
+<td style="text-align:right;">
+0.9935067
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ceptional
+</td>
+<td style="text-align:left;">
+“investigation of phenomena before it is possible to say exactly what is being observed”.. “results in the formation of new empirical concepts (e.g. virus)”, “without these, no clear hypotheses can be formulated.. yet these are often the result of empirical inquiry” #AIMOS2019
+</td>
+<td style="text-align:right;">
+0.9925874
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dannykay68
+</td>
+<td style="text-align:left;">
+HOW is technology having an influence on what we read collectively in science? It’s disturbing.@jevinwest #AIMOS2019 One new product on market is this one <a href="https://t.co/t13CnyCRcy" class="uri">https://t.co/t13CnyCRcy</a> (not suggesting that product is disturbing BTW)
+</td>
+<td style="text-align:right;">
+0.9925874
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dannykay68
+</td>
+<td style="text-align:left;">
+YAY! The inaugural #AIMOS2019 meeting is happening today and tomorrow in Melbourne from which I will be tweeting. (That’s the Association of Interdisciplinary Meta-Research and Open Science in case you needed interpretation of the acronym)
+</td>
+<td style="text-align:right;">
+0.9925874
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+siminevazire
+</td>
+<td style="text-align:left;">
+I really appreciated how <span class="citation">@RachaelBrown42</span> tackled big questions on our minds head-on, even if they are a little delicate! (Eg, where are the philosophers, what are we (metascience ppl) doing that might not be super welcoming to interdisciplinary collab, etc.) #AIMOS2019 <a href="https://t.co/BPY3gfq0c0" class="uri">https://t.co/BPY3gfq0c0</a>
+</td>
+<td style="text-align:right;">
+0.9925874
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ceptional
+</td>
+<td style="text-align:left;">
+Wikidata, “essentially the machine readable version of Wikipedia”. This is the free knowledge ecosystem that scholars should have made around their journals. Next up: Wikijournals! <span class="citation">@ReaderMeter</span> <span class="citation">@Wikicite</span> #AIMOS2019
+</td>
+<td style="text-align:right;">
+0.9925874
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="topic-6" class="section level4 unnumbered">
+<h4>Topic 6</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+screen_name
+</th>
+<th style="text-align:left;">
+text
+</th>
+<th style="text-align:right;">
+gamma
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+dannykay68
+</td>
+<td style="text-align:left;">
+MIDLIFE crisis - is meta-analysis having one at 40 years on? Ioannidis noted that if you change inclusion criteria then results change hugely “The Mass Production of Redundant, Misleading, and Conflicted Systematic Reviews and Meta-analyses” <a href="https://t.co/TUA36lc2x9" class="uri">https://t.co/TUA36lc2x9</a> #AIMOS2019
+</td>
+<td style="text-align:right;">
+0.9952676
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rose_odea
+</td>
+<td style="text-align:left;">
+Superb: <a href="https://t.co/S0gBmmFXWE" class="uri">https://t.co/S0gBmmFXWE</a> #AIMOS2019 thought: insights into addressing sexual misconduct apply to research misconduct too. E.g. “an incident is not just an individual’s problem, a personal failing, but a systemic one” so build “a system that lets people admit their frailty”
+</td>
+<td style="text-align:right;">
+0.9947973
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+JenRichmondPhD
+</td>
+<td style="text-align:left;">
+I didn’t make it to many sessions at #aimos2019 but this talk from <span class="citation">@HannahSFraser</span> was my favourite. I don’t think the self appointed police will convince people to change by pointing the finger at those they deem to be behaving badly. Shame makes people hide/double down. 1/2 <a href="https://t.co/eZA8uDyDIJ" class="uri">https://t.co/eZA8uDyDIJ</a>
+</td>
+<td style="text-align:right;">
+0.9947973
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+annaklas_
+</td>
+<td style="text-align:left;">
+Really appreciate this list, primarily as it speaks to a lot of what I do. As an ECR I attend lots of conferences, only collaborate with people I like spending time with and love teaching (and do lots of it). You can still hustle without ‘playing the game’. #AIMOS2019 <a href="https://t.co/7K8ZOcBgvg" class="uri">https://t.co/7K8ZOcBgvg</a>
+</td>
+<td style="text-align:right;">
+0.9945253
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dannykay68
+</td>
+<td style="text-align:left;">
+JOIN: The “Peer Community in” (PCI) is a non-profit scientific organization that aims to create specific communities of researchers reviewing and recommending, for free, unpublished preprints in their field <a href="https://t.co/Fk3Ts7O4nT" class="uri">https://t.co/Fk3Ts7O4nT</a> #AIMOS2019
+</td>
+<td style="text-align:right;">
+0.9945253
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dannykay68
+</td>
+<td style="text-align:left;">
+ADVICE for ECRs: Attend lots of conferences Don’t collaborate with anyone you don’t like Do good slow science Collaborate with people different to you for balance Be genuine Don’t reject yourself, let them do it Teaching is fun and rewarding Remember why you started #aimos2019
+</td>
+<td style="text-align:right;">
+0.9942232
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GuyProchilo
+</td>
+<td style="text-align:left;">
+<p>I also appreciate everyone who came to my #AIMOS2019 poster session on “the need for post-publication peer review in organizational neuroscience”. I had a lot of good feedback &amp;amp; enjoyed the discussions.</p>
+<p>Poster details: <a href="https://t.co/IWwcb3h2T5" class="uri">https://t.co/IWwcb3h2T5</a></p>
+#IOpsych #phdchat <a href="https://t.co/y15JQGuYQm" class="uri">https://t.co/y15JQGuYQm</a>
+</td>
+<td style="text-align:right;">
+0.9942232
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+siminevazire
+</td>
+<td style="text-align:left;">
+<span class="citation">@jevinwest</span> tells us that Robert Merton gets credit for coming up with the “Matthew effect” (rich get richer) but it was actually Harriet Zuckerman, his wife, who came up with it. This phenomenon is called the Matilda effect. #AIMOS2019
+</td>
+<td style="text-align:right;">
+0.9938859
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+siminevazire
+</td>
+<td style="text-align:left;">
+“What killed alchemy was open science.” -Andrew Leigh What else will transparency kill? If a field resists the move towards transparency, is that because they’re not confident they won’t suffer the same fate as alchemy? #AIMOS2019
+</td>
+<td style="text-align:right;">
+0.9938859
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+lincolntracy
+</td>
+<td style="text-align:left;">
+While I can’t be at #AIMOS2019 for reals, it’s great they are live streaming presentations for those who have registered. Also helps when the speaker camera leaves you with images like this: everyone’s favourite (and occasionally headless) data t(h)ug, <span class="citation">@jamesheathers</span>. <a href="https://t.co/WwtFMHeIZF" class="uri">https://t.co/WwtFMHeIZF</a>
+</td>
+<td style="text-align:right;">
+0.9938859
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div id="software" class="section level1">
+<h1><span class="header-section-number">9</span> Software</h1>
+<p>Software mentioned in Tweets with links to GitHub, BitBucket, Bioconductor or CRAN.</p>
+</div>
+<div id="session-info" class="section level1 unnumbered">
+<h1>Session info</h1>
+<pre><code>## R version 3.6.0 (2019-04-26)
+## Platform: x86_64-apple-darwin15.6.0 (64-bit)
+## Running under: macOS Mojave 10.14.6
+## 
+## Matrix products: default
+## BLAS:   /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRblas.0.dylib
+## LAPACK: /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRlapack.dylib
+## 
+## locale:
+## [1] en_AU.UTF-8/en_AU.UTF-8/en_AU.UTF-8/C/en_AU.UTF-8/en_AU.UTF-8
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+##  [1] fs_1.3.1           here_0.1           knitr_1.25        
+##  [4] magick_2.2         webshot_0.5.1      viridis_0.5.1     
+##  [7] viridisLite_0.3.0  wordcloud_2.6      RColorBrewer_1.1-2
+## [10] ggraph_2.0.0       ggrepel_0.8.1      ggplot2_3.2.1     
+## [13] topicmodels_0.2-8  tidytext_0.2.2     igraph_1.2.4.1    
+## [16] stringr_1.4.0      purrr_0.3.3        forcats_0.4.0     
+## [19] lubridate_1.7.4    tidyr_1.0.0        dplyr_0.8.3       
+## [22] rtweet_0.6.9      
+## 
+## loaded via a namespace (and not attached):
+##  [1] httr_1.4.1         tidygraph_1.1.2    jsonlite_1.6      
+##  [4] assertthat_0.2.1   askpass_1.1        highr_0.8         
+##  [7] stats4_3.6.0       yaml_2.2.0         progress_1.2.2    
+## [10] slam_0.1-45        pillar_1.4.2       backports_1.1.5   
+## [13] lattice_0.20-38    glue_1.3.1         digest_0.6.22     
+## [16] polyclip_1.10-0    colorspace_1.4-1   plyr_1.8.4        
+## [19] htmltools_0.4.0    Matrix_1.2-17      tm_0.7-6          
+## [22] pkgconfig_2.0.3    scales_1.0.0       processx_3.4.1    
+## [25] tweenr_1.0.1       ggforce_0.3.1      tibble_2.1.3      
+## [28] openssl_1.4.1      generics_0.0.2     farver_1.1.0      
+## [31] ellipsis_0.3.0     withr_2.1.2        lazyeval_0.2.2    
+## [34] cli_1.1.0          NLP_0.2-0          magrittr_1.5      
+## [37] crayon_1.3.4       ps_1.3.0           evaluate_0.14     
+## [40] tokenizers_0.2.1   janeaustenr_0.1.5  fansi_0.4.0       
+## [43] SnowballC_0.6.0    MASS_7.3-51.4      xml2_1.2.2        
+## [46] tools_3.6.0        prettyunits_1.0.2  hms_0.5.1         
+## [49] lifecycle_0.1.0    munsell_0.5.0      callr_3.3.2       
+## [52] compiler_3.6.0     rlang_0.4.0        grid_3.6.0        
+## [55] labeling_0.3       rmarkdown_1.16     gtable_0.3.0      
+## [58] curl_4.2           reshape2_1.4.3     graphlayouts_0.5.0
+## [61] R6_2.4.0           gridExtra_2.3      utf8_1.1.4        
+## [64] zeallot_0.1.0      rprojroot_1.3-2    modeltools_0.2-22 
+## [67] stringi_1.4.3      parallel_3.6.0     Rcpp_1.0.2        
+## [70] vctrs_0.2.0        tidyselect_0.2.5   xfun_0.10</code></pre>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
